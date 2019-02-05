@@ -1,0 +1,201 @@
+openapi: 3.0.2
+info:
+    title: PowerOfficeGo
+    description: 'PowerOffice Go API'
+    version: 1.0.0
+servers:
+    -
+        url: 'https://{url_type}.poweroffice.net'
+        description: ""
+        variables:
+            url_type:
+                enum:
+                    - api
+                    - api-demo
+                default: api
+paths:
+    /OAuth/Token:
+        description: 'Get Authentication Token/Refresh Token'
+        post:
+            tags:
+                - Authenticate
+            operationId: GetCredentials
+            requestBody:
+                content:
+                    application/x-www-form-urlencoded:
+                        schema:
+                            $ref: '#/components/schemas/AuthenticationRequest'
+                required: true
+            responses:
+                '200':
+                    description: Success
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/AuthenticationResponse'
+            security:
+                -
+                    BasicAuth: []
+        servers:
+            -
+                url: 'https://{url_type}.poweroffice.net'
+                description: ""
+                variables:
+                    url_type:
+                        enum:
+                            - go
+                            - godemo
+                        default: go
+components:
+    schemas:
+        AuthenticationResponse:
+            title: 'Root Type for AuthenticationResponse'
+            description: ""
+            type: object
+            properties:
+                access_token:
+                    type: string
+                token_type:
+                    type: string
+                expires_in:
+                    type: integer
+                refresh_token:
+                    type: string
+        AuthenticationRequest:
+            required:
+                - grant_type
+            type: object
+            properties:
+                grant_type:
+                    enum:
+                        - client_credentials
+                        - refresh_token
+                refresh_token:
+                    type: string
+        MailAddress:
+            title: 'Root Type for MailAddress'
+            description: ""
+            type: object
+            properties:
+                city:
+                    type: string
+                zipCode:
+                    type: string
+                address1:
+                    type: string
+                address2:
+                    type: string
+                countryCode:
+                    type: string
+                lastChanged:
+                    type: string
+                id:
+                    type: integer
+                isPrimary:
+                    type: boolean
+            example: "{\n    \"city\": \"string\",\n    \"zipCode\": \"string\",\n    \"address1\": \"string\",\n    \"address2\": \"string\",\n    \"countryCode\": \"string\",\n    \"lastChanged\": \"DateTimeOffset\",\n    \"id\": 0,\n    \"isPrimary\": true\n}"
+        CustomerData:
+            title: 'Root Type for CustomerData'
+            description: ""
+            type: object
+            properties:
+                name:
+                    type: string
+                firstName:
+                    type: string
+                lastName:
+                    type: string
+                isPerson:
+                    type: boolean
+                legalName:
+                    type: string
+                contactPersonId:
+                    type: integer
+                vatNumber:
+                    type: string
+                websiteUrl:
+                    type: string
+                since:
+                    type: string
+                currencyCode:
+                    type: string
+                invoiceDeliveryType:
+                    type: string
+                isVatFree:
+                    type: boolean
+                discountPercent:
+                    type: integer
+                invoiceEmailAddress:
+                    type: string
+                hourlyRate:
+                    type: integer
+                invoiceBrandingThemeCode:
+                    type: string
+                socialSecurityNumber:
+                    type: string
+                dateOfBirth:
+                    type: string
+                id:
+                    type: integer
+                code:
+                    type: integer
+                externalCode:
+                    type: integer
+                mailAddress:
+                    $ref: '#/components/schemas/MailAddress'
+                streetAddresses:
+                    $ref: '#/components/schemas/MailAddress'
+                emailAddress:
+                    type: string
+                phoneNumber:
+                    type: string
+                isArchived:
+                    type: boolean
+                lastChanged:
+                    type: string
+                contactGroups:
+                    type: string
+                createdFromImportJournalId:
+                    type: string
+        Validation:
+            title: 'Root Type for Validation'
+            description: ""
+            type: object
+            properties:
+                errorLogReference:
+                    type: string
+                summary:
+                    type: string
+                exception:
+                    type: string
+        BaseResponse:
+            required:
+                - success
+            type: object
+            properties:
+                success:
+                    type: boolean
+                validation:
+                    $ref: '#/components/schemas/Validation'
+        CustomerResponse:
+            type: object
+            properties:
+                data:
+                    $ref: '#/components/schemas/CustomerData'
+    securitySchemes:
+        BearerAuth:
+            type: http
+            description: 'For API Server'
+            scheme: bearer
+        BasicAuth:
+            type: http
+            description: 'For Authentication Server'
+            scheme: basic
+tags:
+    -
+        name: Authenticate
+        description: ""
+    -
+        name: CustomerSupplier
+        description: ""
+
