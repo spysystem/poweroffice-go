@@ -1,201 +1,1031 @@
-openapi: 3.0.2
+swagger: '2.0'
 info:
-    title: PowerOfficeGo
-    description: 'PowerOffice Go API'
-    version: 1.0.0
-servers:
-    -
-        url: 'https://{url_type}.poweroffice.net'
-        description: ""
-        variables:
-            url_type:
-                enum:
-                    - api
-                    - api-demo
-                default: api
-paths:
-    /OAuth/Token:
-        description: 'Get Authentication Token/Refresh Token'
-        post:
-            tags:
-                - Authenticate
-            operationId: GetCredentials
-            requestBody:
-                content:
-                    application/x-www-form-urlencoded:
-                        schema:
-                            $ref: '#/components/schemas/AuthenticationRequest'
-                required: true
-            responses:
-                '200':
-                    description: Success
-                    content:
-                        application/json:
-                            schema:
-                                $ref: '#/components/schemas/AuthenticationResponse'
-            security:
-                -
-                    BasicAuth: []
-        servers:
-            -
-                url: 'https://{url_type}.poweroffice.net'
-                description: ""
-                variables:
-                    url_type:
-                        enum:
-                            - go
-                            - godemo
-                        default: go
-components:
-    schemas:
-        AuthenticationResponse:
-            title: 'Root Type for AuthenticationResponse'
-            description: ""
-            type: object
-            properties:
-                access_token:
-                    type: string
-                token_type:
-                    type: string
-                expires_in:
-                    type: integer
-                refresh_token:
-                    type: string
-        AuthenticationRequest:
-            required:
-                - grant_type
-            type: object
-            properties:
-                grant_type:
-                    enum:
-                        - client_credentials
-                        - refresh_token
-                refresh_token:
-                    type: string
-        MailAddress:
-            title: 'Root Type for MailAddress'
-            description: ""
-            type: object
-            properties:
-                city:
-                    type: string
-                zipCode:
-                    type: string
-                address1:
-                    type: string
-                address2:
-                    type: string
-                countryCode:
-                    type: string
-                lastChanged:
-                    type: string
-                id:
-                    type: integer
-                isPrimary:
-                    type: boolean
-            example: "{\n    \"city\": \"string\",\n    \"zipCode\": \"string\",\n    \"address1\": \"string\",\n    \"address2\": \"string\",\n    \"countryCode\": \"string\",\n    \"lastChanged\": \"DateTimeOffset\",\n    \"id\": 0,\n    \"isPrimary\": true\n}"
-        CustomerData:
-            title: 'Root Type for CustomerData'
-            description: ""
-            type: object
-            properties:
-                name:
-                    type: string
-                firstName:
-                    type: string
-                lastName:
-                    type: string
-                isPerson:
-                    type: boolean
-                legalName:
-                    type: string
-                contactPersonId:
-                    type: integer
-                vatNumber:
-                    type: string
-                websiteUrl:
-                    type: string
-                since:
-                    type: string
-                currencyCode:
-                    type: string
-                invoiceDeliveryType:
-                    type: string
-                isVatFree:
-                    type: boolean
-                discountPercent:
-                    type: integer
-                invoiceEmailAddress:
-                    type: string
-                hourlyRate:
-                    type: integer
-                invoiceBrandingThemeCode:
-                    type: string
-                socialSecurityNumber:
-                    type: string
-                dateOfBirth:
-                    type: string
-                id:
-                    type: integer
-                code:
-                    type: integer
-                externalCode:
-                    type: integer
-                mailAddress:
-                    $ref: '#/components/schemas/MailAddress'
-                streetAddresses:
-                    $ref: '#/components/schemas/MailAddress'
-                emailAddress:
-                    type: string
-                phoneNumber:
-                    type: string
-                isArchived:
-                    type: boolean
-                lastChanged:
-                    type: string
-                contactGroups:
-                    type: string
-                createdFromImportJournalId:
-                    type: string
-        Validation:
-            title: 'Root Type for Validation'
-            description: ""
-            type: object
-            properties:
-                errorLogReference:
-                    type: string
-                summary:
-                    type: string
-                exception:
-                    type: string
-        BaseResponse:
-            required:
-                - success
-            type: object
-            properties:
-                success:
-                    type: boolean
-                validation:
-                    $ref: '#/components/schemas/Validation'
-        CustomerResponse:
-            type: object
-            properties:
-                data:
-                    $ref: '#/components/schemas/CustomerData'
-    securitySchemes:
-        BearerAuth:
-            type: http
-            description: 'For API Server'
-            scheme: bearer
-        BasicAuth:
-            type: http
-            description: 'For Authentication Server'
-            scheme: basic
-tags:
-    -
-        name: Authenticate
-        description: ""
-    -
-        name: CustomerSupplier
-        description: ""
+  version: '1.0.0'
+  title: PowerOffice-Go API
+  description: PowerOffice Go API.
 
+host: api-demo.poweroffice.net
+schemes:
+  - https
+
+securityDefinitions:
+  oAuth:
+    type: oauth2
+    tokenUrl: https://api-demo.poweroffice.net/OAuth/Token
+    flow: application
+    scopes:
+      write: allows modifying resources
+      read: allows reading resources
+  BasicAuth:
+    type: basic
+
+security:
+  - oAuth: [read, write]
+
+tags:
+  - name: Authenticate
+  - name: Contacts
+  - name: Voucher
+  - name: Ledger
+
+responses:
+  Unauthorized:
+    description: Unauthorized
+    schema:
+      $ref: '#/definitions/BaseResponse'
+
+paths:
+  /OAuth/Token:
+    post:
+      summary: Get Access Token
+      operationId: GetAccessToken
+      tags:
+        - Authenticate
+      security:
+        - BasicAuth: []
+      consumes:
+        - 'application/x-www-form-urlencoded'
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: data
+          schema:
+            $ref: '#/definitions/Authentication'
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/AuthenticationResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /Customer:
+    get:
+      summary: Search Customers
+      operationId: SearchCustomers
+      tags:
+        - Contacts
+      parameters:
+        - name: $filter
+          in: query
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchCustomerResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+    post:
+      summary: Create or Update Customer
+      operationId: CreateOrUpdateCustomer
+      tags:
+        - Contacts
+      parameters:
+        - in: body
+          name: data
+          schema:
+            $ref: '#/definitions/Customer'
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetCustomerResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /Customer/{id}:
+    get:
+      summary: Get Customer
+      operationId: GetCustomer
+      tags:
+        - Contacts
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: description
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetCustomerResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /ContactGroup:
+    get:
+      summary: Search Contact Groups
+      operationId: SearchContactGroups
+      tags:
+        - Contacts
+      parameters:
+        - name: $filter
+          in: query
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchContactGroupResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+    post:
+      summary: Create or Update Contact Group
+      operationId: CreateOrUpdateContactGroup
+      consumes:
+        - application/json
+      tags:
+        - Contacts
+      parameters:
+        - in: body
+          name: data
+          schema:
+           $ref: '#/definitions/ContactGroup'
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetContactGroupResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /ContactGroup/{id}:
+    get:
+      summary: Get Contact Group
+      operationId: GetContactGroup
+      tags:
+        - Contacts
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: description
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetContactGroupResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /Supplier:
+    get:
+      summary: Search Suppliers
+      operationId: SearchSuppliers
+      tags:
+        - Contacts
+      parameters:
+        - name: $filter
+          in: query
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchSupplierResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+    post:
+      summary: Create or Update Supplier
+      operationId: CreateOrUpdateSupplierGroup
+      tags:
+        - Contacts
+      parameters:
+        - in: body
+          name: data
+          schema:
+            $ref: '#/definitions/Supplier'
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetSupplierResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /Supplier/{id}:
+    get:
+      summary: Get Supplier
+      operationId: GetSupplier
+      tags:
+        - Contacts
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: description
+          type: integer
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetSupplierResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /Voucher/ManualJournalVoucher:
+    get:
+      summary: Search Manual Journal Vouchers
+      operationId: SearchManualJournalVoucher
+      tags:
+        - Voucher
+      parameters:
+        - name: $filter
+          in: query
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchManualJournalVoucherResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+    post:
+      summary: Create or Update ManualJournalVoucher
+      operationId: CreateOrUpdateManualJournalVoucher
+      tags:
+        - Voucher
+      parameters:
+        - in: body
+          name: data
+          schema:
+            $ref: '#/definitions/ManualJournalVoucher'
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetManualJournalVoucherResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /Voucher/ManualJournalVoucher/{id}:
+    get:
+      summary: Get ManualJournalVoucher
+      operationId: GetManualJournalVoucher
+      tags:
+        - Voucher
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: description
+          type: integer
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetManualJournalVoucherResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /Voucher/OutgoingInvoiceVoucher:
+    get:
+      summary: Search Outgoing Invoice Vouchers
+      operationId: SearchOutgoingInvoiceVoucher
+      tags:
+        - Voucher
+      parameters:
+        - name: $filter
+          in: query
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchOutgoingInvoiceVoucherResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+    post:
+      summary: Create or Update Outgoing Invoice Voucher
+      operationId: CreateOrUpdateOutgoingInvoiceVoucher
+      tags:
+        - Voucher
+      parameters:
+        - in: body
+          name: data
+          schema:
+            $ref: '#/definitions/OutgoingInvoiceVoucher'
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetOutgoingInvoiceVoucherResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /Voucher/OutgoingInvoiceVoucher/{id}:
+    get:
+      summary: Get Outgoing Invoice Voucher
+      operationId: GetOutgoingInvoiceVoucher
+      tags:
+        - Voucher
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: description
+          type: integer
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetOutgoingInvoiceVoucherResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /Voucher/IncomingInvoiceVoucher:
+    get:
+      summary: Search Incoming Invoice Vouchers
+      operationId: SearchIncomingInvoiceVoucher
+      tags:
+        - Voucher
+      parameters:
+        - name: $filter
+          in: query
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchIncomingInvoiceVoucherResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+    post:
+      summary: Create or Update Incoming Invoice Voucher
+      operationId: CreateOrUpdateIncomingInvoiceVoucher
+      tags:
+        - Voucher
+      parameters:
+        - in: body
+          name: data
+          schema:
+            $ref: '#/definitions/IncomingInvoiceVoucher'
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetIncomingInvoiceVoucherResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /Voucher/IncomingInvoiceVoucher/{id}:
+    get:
+      summary: Get Incoming Invoice Voucher
+      operationId: GetIncomingInvoiceVoucher
+      tags:
+        - Voucher
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: description
+          type: integer
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetIncomingInvoiceVoucherResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /Voucher/BankJournalVoucher:
+    get:
+      summary: Search Bank Journal Vouchers
+      operationId: SearchBankJournalVoucher
+      tags:
+        - Voucher
+      parameters:
+        - name: $filter
+          in: query
+          type: string
+      responses:
+        200:
+          description: OK
+        401:
+          $ref: '#/responses/Unauthorized'
+    post:
+      summary: Create or Update ManualJournalVoucher
+      operationId: CreateOrUpdateBankJournalVoucher
+      tags:
+        - Voucher
+      parameters:
+        - in: body
+          name: data
+          schema:
+            $ref: '#/definitions/BankJournalVoucher'
+      responses:
+        200:
+          description: OK
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /Voucher/BankJournalVoucher/{id}:
+    get:
+      summary: Get BankJournalVoucher
+      operationId: GetBankJournalVoucher
+      tags:
+        - Voucher
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: description
+          type: integer
+      responses:
+        200:
+          description: OK
+        401:
+          $ref: '#/responses/Unauthorized'
+
+
+  /Reporting/CustomerLedger:
+    get:
+      summary: Search CustomerLedgers
+      operationId: SearchCustomerLedger
+      tags:
+        - Ledger
+      parameters:
+        - name: toDate
+          in: query
+          required: true
+          type: string
+        - name: $filter
+          in: query
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchCustomerLedgerEntryResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /Reporting/CustomerLedger/{matchId}:
+    get:
+      summary: Get Customer Ledgers
+      operationId: GetCustomerLedger
+      tags:
+        - Ledger
+      parameters:
+        - name: matchId
+          in: path
+          required: true
+          type: number
+        - name: $filter
+          in: query
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetCustomerLedgerEntryResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+definitions:
+#region Authentication
+  Authentication:
+    type: object
+    required:
+      - grant_type
+    properties:
+      grant_type:
+        type: string
+      refresh_token:
+        type: string
+
+  AuthenticationResponse:
+    type: object
+    properties:
+      access_token:
+        type: string
+      token_type:
+        type: string
+      expires_in:
+        type: integer
+      refresh_token:
+        type: string
+#endregion
+
+#region CommonObjects
+  Validation:
+    type: object
+    properties:
+      errorLogReference:
+        type: string
+      summary:
+        type: string
+      exception:
+        type: string
+
+  BaseResponse:
+    required:
+      - success
+    type: object
+    properties:
+      success:
+        type: boolean
+      validation:
+        $ref: '#/definitions/Validation'
+
+  MailAddress:
+    description: ""
+    type: object
+    properties:
+      city:
+        type: string
+      zipCode:
+        type: string
+      address1:
+        type: string
+      address2:
+        type: string
+      countryCode:
+        type: string
+      lastChanged:
+        type: string
+      id:
+        type: integer
+      isPrimary:
+        type: boolean
+#endregion
+
+#region Customer
+  Customer:
+    type: object
+    properties:
+      invoiceDeliveryType:
+        type: integer
+      isVatFree:
+        type: boolean
+      discountPercent:
+        type: integer
+      invoiceEmailAddress:
+        type: string
+      paymentTerms:
+        type: integer
+      useFactoring:
+        type: boolean
+      sendReminders:
+        type: boolean
+      doNotAddLatePaymentFees:
+        type: boolean
+      doNotAddLatePaymentInterest:
+        type: boolean
+      deliveryTerm:
+        type: string
+      name:
+        type: string
+      legalName:
+        type: string
+      contactPersonId:
+        type: integer
+      vatNumber:
+        type: string
+      websiteUrl:
+        type: string
+      since:
+        type: string
+      isPerson:
+        type: boolean
+      currencyCode:
+        type: string
+      id:
+        type: integer
+      code:
+        type: integer
+      externalCode:
+        type: integer
+      mailAddress:
+        $ref: '#/definitions/MailAddress'
+      streetAddress:
+        $ref: '#/definitions/MailAddress'
+      streetAddresses:
+        type: array
+        items:
+          $ref: '#/definitions/MailAddress'
+      emailAddress:
+        type: string
+      phoneNumber:
+        type: string
+      isArchived:
+        type: boolean
+      lastChanged:
+        type: string
+      contactGroups:
+        type: array
+        items:
+          type: string
+
+  GetCustomerResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+           $ref: '#/definitions/Customer'
+
+  SearchCustomerResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/definitions/Customer'
+
+#endregion
+
+#region Supplier
+  Supplier:
+    type: object
+    properties:
+      name:
+        type: string
+      legalName:
+        type: string
+      contactPersonId:
+        type: integer
+      vatNumber:
+        type: string
+      websiteUrl:
+        type: string
+      since:
+        type: string
+      isPerson:
+        type: boolean
+      currencyCode:
+        type: string
+      id:
+        type: integer
+      code:
+        type: integer
+      mailAddress:
+        $ref: '#/definitions/MailAddress'
+      streetAddress:
+        $ref: '#/definitions/MailAddress'
+      streetAddresses:
+        type: array
+        items:
+          $ref: '#/definitions/MailAddress'
+      emailAddress:
+        type: string
+      phoneNumber:
+        type: string
+      isArchived:
+        type: boolean
+      lastChanged:
+        type: string
+      contactGroups:
+        type: array
+        items:
+          type: string
+
+  GetSupplierResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+           $ref: '#/definitions/Supplier'
+
+  SearchSupplierResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/definitions/Supplier'
+#endregion
+
+#region ContactGroup
+  ContactGroup:
+    type: object
+    properties:
+      id:
+        type: integer
+      title:
+        type: string
+      sendInvoicesToGroup:
+        type: boolean
+
+  GetContactGroupResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            $ref: '#/definitions/ContactGroup'
+
+  SearchContactGroupResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/definitions/ContactGroup'
+
+#endregion
+
+#region OutgoingInvoiceVoucher
+  OutgoingInvoiceVoucherLine:
+    type: object
+    properties:
+      id:
+        type: integer
+      accountCode:
+        type: integer
+      amount:
+        type: number
+      description:
+        type: string
+      vatCode:
+        type: string
+
+  OutgoingInvoiceVoucher:
+    type: object
+    properties:
+      id:
+        type: integer
+      createdDate:
+        type: string
+      currencyCode:
+        type: string
+      currencyRate:
+        type: number
+      customerCode:
+        type: integer
+      deliveryDate:
+        type: string
+      deliveryTerm:
+        type: string
+      dueDate:
+        type: string
+      invoiceNo:
+        type: number
+      description:
+        type: string
+      isReversed:
+        type: boolean
+      lines:
+        type: array
+        items:
+          $ref: '#/definitions/OutgoingInvoiceVoucherLine'
+      voucherDate:
+        type: string
+      voucherNo:
+        type: integer
+
+  GetOutgoingInvoiceVoucherResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            $ref: '#/definitions/OutgoingInvoiceVoucher'
+
+  SearchOutgoingInvoiceVoucherResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/definitions/OutgoingInvoiceVoucher'
+
+#endregion
+
+#region IncomingInvoiceVoucher
+  IncomingInvoiceVoucherLine:
+    type: object
+    properties:
+      id:
+        type: integer
+      accountCode:
+        type: integer
+      amount:
+        type: number
+      description:
+        type: string
+      vatCode:
+        type: string
+
+  IncomingInvoiceVoucher:
+    type: object
+    properties:
+      id:
+        type: integer
+      createdDate:
+        type: string
+      currencyCode:
+        type: string
+      currencyRate:
+        type: number
+      supplierCode:
+        type: integer
+      dueDate:
+        type: string
+      invoiceNo:
+        type: string
+      isReversed:
+        type: boolean
+      lines:
+        type: array
+        items:
+          $ref: '#/definitions/IncomingInvoiceVoucherLine'
+      voucherDate:
+        type: string
+      voucherNo:
+        type: integer
+
+  GetIncomingInvoiceVoucherResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            $ref: '#/definitions/IncomingInvoiceVoucher'
+
+  SearchIncomingInvoiceVoucherResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/definitions/IncomingInvoiceVoucher'
+
+#endregion
+
+#region ManualVoucher
+  ManualJournalVoucherLine:
+    type: object
+    properties:
+      id:
+        type: integer
+      accountCode:
+        type: integer
+      amount:
+        type: number
+      currencyCode:
+        type: string
+      currencyRate:
+        type: number
+      date:
+        type: string
+      description:
+        type: string
+      vatCode:
+        type: string
+
+  ManualJournalVoucher:
+    type: object
+    properties:
+      id:
+        type: integer
+      createdDate:
+        type: string
+      currencyCode:
+        type: string
+      description:
+        type: string
+      isReversed:
+        type: boolean
+      lines:
+        type: array
+        items:
+          $ref: '#/definitions/ManualJournalVoucherLine'
+      voucherDate:
+        type: string
+      voucherNo:
+        type: integer
+
+  GetManualJournalVoucherResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            $ref: '#/definitions/ManualJournalVoucher'
+
+  SearchManualJournalVoucherResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/definitions/ManualJournalVoucher'
+
+#endregion
+
+#region BankJournal
+  BankJournalVoucherLine:
+    type: object
+    properties:
+      id:
+        type: integer
+      accountCode:
+        type: integer
+      amount:
+        type: number
+      currencyCode:
+        type: string
+      currencyRate:
+        type: number
+      date:
+        type: string
+      description:
+        type: string
+      invoiceNo:
+        type: string
+      vatCode:
+        type: string
+
+  BankJournalVoucher:
+    type: object
+    properties:
+      id:
+        type: integer
+      createdDate:
+        type: string
+      currencyCode:
+        type: string
+      description:
+        type: string
+      isReversed:
+        type: boolean
+      lines:
+        type: array
+        items:
+          $ref: '#/definitions/BankJournalVoucherLine'
+      voucherDate:
+        type: string
+      voucherNo:
+        type: integer
+#endregion
+
+#region CustomerLedger
+  CustomerLedgerEntry:
+    type: object
+    properties:
+      id:
+        type: integer
+      postingDate:
+        type: string
+      dueDate:
+        type: string
+      voucherNo:
+        type: integer
+      currencyCode:
+        type: string
+      currencyAmount:
+        type: number
+      amount:
+        type: number
+      balance:
+        type: number
+      voucherId:
+        type: string
+      voucherDate:
+        type: string
+      voucherType:
+        type: integer
+      matchId:
+        type: integer
+      lastChanged:
+        type: string
+      createdDate:
+        type: string
+      customer:
+        $ref: '#/definitions/Customer'
+
+  SearchCustomerLedgerEntryResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/definitions/CustomerLedgerEntry'
+  GetCustomerLedgerEntryResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            $ref: '#/definitions/CustomerLedgerEntry'
+#endregion
