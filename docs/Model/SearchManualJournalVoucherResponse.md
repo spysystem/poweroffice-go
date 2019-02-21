@@ -1,0 +1,10 @@
+# SearchManualJournalVoucherResponse
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**data** | [**\PowerOfficeGo\Model\ManualJournalVoucher[]**](ManualJournalVoucher.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
