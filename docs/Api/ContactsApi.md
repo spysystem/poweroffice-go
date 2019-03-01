@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createOrUpdateContactGroup**](ContactsApi.md#createOrUpdateContactGroup) | **POST** /ContactGroup | Create or Update Contact Group
 [**createOrUpdateCustomer**](ContactsApi.md#createOrUpdateCustomer) | **POST** /Customer | Create or Update Customer
-[**createOrUpdateSupplierGroup**](ContactsApi.md#createOrUpdateSupplierGroup) | **POST** /Supplier | Create or Update Supplier
+[**createOrUpdateSupplier**](ContactsApi.md#createOrUpdateSupplier) | **POST** /Supplier | Create or Update Supplier
 [**getContactGroup**](ContactsApi.md#getContactGroup) | **GET** /ContactGroup/{id} | Get Contact Group
 [**getCustomer**](ContactsApi.md#getCustomer) | **GET** /Customer/{id} | Get Customer
 [**getSupplier**](ContactsApi.md#getSupplier) | **GET** /Supplier/{id} | Get Supplier
@@ -117,8 +117,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **createOrUpdateSupplierGroup**
-> \PowerOfficeGo\Model\GetSupplierResponse createOrUpdateSupplierGroup($supplier)
+# **createOrUpdateSupplier**
+> \PowerOfficeGo\Model\GetSupplierResponse createOrUpdateSupplier($supplier)
 
 Create or Update Supplier
 
@@ -139,10 +139,10 @@ $apiInstance = new PowerOfficeGo\Api\ContactsApi(
 $supplier = new \PowerOfficeGo\Model\Supplier(); // \PowerOfficeGo\Model\Supplier | 
 
 try {
-    $result = $apiInstance->createOrUpdateSupplierGroup($supplier);
+    $result = $apiInstance->createOrUpdateSupplier($supplier);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ContactsApi->createOrUpdateSupplierGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ContactsApi->createOrUpdateSupplier: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

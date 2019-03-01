@@ -715,7 +715,7 @@ class ContactsApi
     }
 
     /**
-     * Operation createOrUpdateSupplierGroup
+     * Operation createOrUpdateSupplier
      *
      * Create or Update Supplier
      *
@@ -725,14 +725,14 @@ class ContactsApi
      * @throws \InvalidArgumentException
      * @return \PowerOfficeGo\Model\GetSupplierResponse|\PowerOfficeGo\Model\BaseResponse
      */
-    public function createOrUpdateSupplierGroup($supplier = null)
+    public function createOrUpdateSupplier($supplier = null)
     {
-        list($response) = $this->createOrUpdateSupplierGroupWithHttpInfo($supplier);
+        list($response) = $this->createOrUpdateSupplierWithHttpInfo($supplier);
         return $response;
     }
 
     /**
-     * Operation createOrUpdateSupplierGroupWithHttpInfo
+     * Operation createOrUpdateSupplierWithHttpInfo
      *
      * Create or Update Supplier
      *
@@ -742,9 +742,9 @@ class ContactsApi
      * @throws \InvalidArgumentException
      * @return array of \PowerOfficeGo\Model\GetSupplierResponse|\PowerOfficeGo\Model\BaseResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createOrUpdateSupplierGroupWithHttpInfo($supplier = null)
+    public function createOrUpdateSupplierWithHttpInfo($supplier = null)
     {
-        $request = $this->createOrUpdateSupplierGroupRequest($supplier);
+        $request = $this->createOrUpdateSupplierRequest($supplier);
 
         try {
             $options = $this->createHttpClientOption();
@@ -849,7 +849,7 @@ class ContactsApi
     }
 
     /**
-     * Operation createOrUpdateSupplierGroupAsync
+     * Operation createOrUpdateSupplierAsync
      *
      * Create or Update Supplier
      *
@@ -858,9 +858,9 @@ class ContactsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createOrUpdateSupplierGroupAsync($supplier = null)
+    public function createOrUpdateSupplierAsync($supplier = null)
     {
-        return $this->createOrUpdateSupplierGroupAsyncWithHttpInfo($supplier)
+        return $this->createOrUpdateSupplierAsyncWithHttpInfo($supplier)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -869,7 +869,7 @@ class ContactsApi
     }
 
     /**
-     * Operation createOrUpdateSupplierGroupAsyncWithHttpInfo
+     * Operation createOrUpdateSupplierAsyncWithHttpInfo
      *
      * Create or Update Supplier
      *
@@ -878,10 +878,10 @@ class ContactsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createOrUpdateSupplierGroupAsyncWithHttpInfo($supplier = null)
+    public function createOrUpdateSupplierAsyncWithHttpInfo($supplier = null)
     {
         $returnType = '\PowerOfficeGo\Model\GetSupplierResponse';
-        $request = $this->createOrUpdateSupplierGroupRequest($supplier);
+        $request = $this->createOrUpdateSupplierRequest($supplier);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -918,14 +918,14 @@ class ContactsApi
     }
 
     /**
-     * Create request for operation 'createOrUpdateSupplierGroup'
+     * Create request for operation 'createOrUpdateSupplier'
      *
      * @param  \PowerOfficeGo\Model\Supplier $supplier (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createOrUpdateSupplierGroupRequest($supplier = null)
+    public function createOrUpdateSupplierRequest($supplier = null)
     {
 
         $resourcePath = '/Supplier';

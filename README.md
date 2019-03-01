@@ -89,7 +89,7 @@ Class | Method | HTTP request | Description
 *AuthenticateApi* | [**getAccessToken**](docs/Api/AuthenticateApi.md#getaccesstoken) | **POST** /OAuth/Token | Get Access Token
 *ContactsApi* | [**createOrUpdateContactGroup**](docs/Api/ContactsApi.md#createorupdatecontactgroup) | **POST** /ContactGroup | Create or Update Contact Group
 *ContactsApi* | [**createOrUpdateCustomer**](docs/Api/ContactsApi.md#createorupdatecustomer) | **POST** /Customer | Create or Update Customer
-*ContactsApi* | [**createOrUpdateSupplierGroup**](docs/Api/ContactsApi.md#createorupdatesuppliergroup) | **POST** /Supplier | Create or Update Supplier
+*ContactsApi* | [**createOrUpdateSupplier**](docs/Api/ContactsApi.md#createorupdatesupplier) | **POST** /Supplier | Create or Update Supplier
 *ContactsApi* | [**getContactGroup**](docs/Api/ContactsApi.md#getcontactgroup) | **GET** /ContactGroup/{id} | Get Contact Group
 *ContactsApi* | [**getCustomer**](docs/Api/ContactsApi.md#getcustomer) | **GET** /Customer/{id} | Get Customer
 *ContactsApi* | [**getSupplier**](docs/Api/ContactsApi.md#getsupplier) | **GET** /Supplier/{id} | Get Supplier

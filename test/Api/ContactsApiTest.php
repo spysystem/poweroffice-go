@@ -92,12 +92,12 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for createOrUpdateSupplierGroup
+     * Test case for createOrUpdateSupplier
      *
      * Create or Update Supplier.
      *
      */
-    public function testCreateOrUpdateSupplierGroup()
+    public function testCreateOrUpdateSupplier()
     {
     }
 
