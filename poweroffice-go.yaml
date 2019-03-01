@@ -191,7 +191,7 @@ paths:
           $ref: '#/responses/Unauthorized'
     post:
       summary: Create or Update Supplier
-      operationId: CreateOrUpdateSupplierGroup
+      operationId: CreateOrUpdateSupplier
       tags:
         - Contacts
       parameters:
