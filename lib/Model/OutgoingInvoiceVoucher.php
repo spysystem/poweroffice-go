@@ -65,7 +65,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
         'delivery_date' => 'string',
         'delivery_term' => 'string',
         'due_date' => 'string',
-        'invoice_no' => 'float',
+        'invoice_no' => 'int',
         'description' => 'string',
         'is_reversed' => 'bool',
         'lines' => '\PowerOfficeGo\Model\OutgoingInvoiceVoucherLine[]',
@@ -477,7 +477,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
     /**
      * Gets invoice_no
      *
-     * @return float|null
+     * @return int|null
      */
     public function getInvoiceNo()
     {
@@ -487,7 +487,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
     /**
      * Sets invoice_no
      *
-     * @param float|null $invoice_no invoice_no
+     * @param int|null $invoice_no invoice_no
      *
      * @return $this
      */
