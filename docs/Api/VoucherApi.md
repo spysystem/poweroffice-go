@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **createOrUpdateBankJournalVoucher**
-> createOrUpdateBankJournalVoucher($bank_journal_voucher)
+> \PowerOfficeGo\Model\GetBankJournalVoucherResponse createOrUpdateBankJournalVoucher($bank_journal_voucher)
 
 Create or Update ManualJournalVoucher
 
@@ -40,7 +40,8 @@ $apiInstance = new PowerOfficeGo\Api\VoucherApi(
 $bank_journal_voucher = new \PowerOfficeGo\Model\BankJournalVoucher(); // \PowerOfficeGo\Model\BankJournalVoucher | 
 
 try {
-    $apiInstance->createOrUpdateBankJournalVoucher($bank_journal_voucher);
+    $result = $apiInstance->createOrUpdateBankJournalVoucher($bank_journal_voucher);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->createOrUpdateBankJournalVoucher: ', $e->getMessage(), PHP_EOL;
 }
@@ -55,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\PowerOfficeGo\Model\GetBankJournalVoucherResponse**](../Model/GetBankJournalVoucherResponse.md)
 
 ### Authorization
 
@@ -222,7 +223,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBankJournalVoucher**
-> getBankJournalVoucher($id)
+> \PowerOfficeGo\Model\GetBankJournalVoucherResponse getBankJournalVoucher($id)
 
 Get BankJournalVoucher
 
@@ -243,7 +244,8 @@ $apiInstance = new PowerOfficeGo\Api\VoucherApi(
 $id = 56; // int | description
 
 try {
-    $apiInstance->getBankJournalVoucher($id);
+    $result = $apiInstance->getBankJournalVoucher($id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->getBankJournalVoucher: ', $e->getMessage(), PHP_EOL;
 }
@@ -258,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\PowerOfficeGo\Model\GetBankJournalVoucherResponse**](../Model/GetBankJournalVoucherResponse.md)
 
 ### Authorization
 
@@ -425,7 +427,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchBankJournalVoucher**
-> searchBankJournalVoucher($filter)
+> \PowerOfficeGo\Model\SearchBankJournalVoucherResponse searchBankJournalVoucher($filter)
 
 Search Bank Journal Vouchers
 
@@ -446,7 +448,8 @@ $apiInstance = new PowerOfficeGo\Api\VoucherApi(
 $filter = 'filter_example'; // string | 
 
 try {
-    $apiInstance->searchBankJournalVoucher($filter);
+    $result = $apiInstance->searchBankJournalVoucher($filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->searchBankJournalVoucher: ', $e->getMessage(), PHP_EOL;
 }
@@ -461,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\PowerOfficeGo\Model\SearchBankJournalVoucherResponse**](../Model/SearchBankJournalVoucherResponse.md)
 
 ### Authorization
 

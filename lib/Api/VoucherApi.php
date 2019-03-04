@@ -135,11 +135,12 @@ class VoucherApi
      *
      * @throws \PowerOfficeGo\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \PowerOfficeGo\Model\GetBankJournalVoucherResponse|\PowerOfficeGo\Model\BaseResponse
      */
     public function createOrUpdateBankJournalVoucher($bank_journal_voucher = null)
     {
-        $this->createOrUpdateBankJournalVoucherWithHttpInfo($bank_journal_voucher);
+        list($response) = $this->createOrUpdateBankJournalVoucherWithHttpInfo($bank_journal_voucher);
+        return $response;
     }
 
     /**
@@ -151,7 +152,7 @@ class VoucherApi
      *
      * @throws \PowerOfficeGo\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PowerOfficeGo\Model\GetBankJournalVoucherResponse|\PowerOfficeGo\Model\BaseResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createOrUpdateBankJournalVoucherWithHttpInfo($bank_journal_voucher = null)
     {
@@ -185,10 +186,67 @@ class VoucherApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\PowerOfficeGo\Model\GetBankJournalVoucherResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ('\PowerOfficeGo\Model\GetBankJournalVoucherResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PowerOfficeGo\Model\GetBankJournalVoucherResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\PowerOfficeGo\Model\BaseResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ('\PowerOfficeGo\Model\BaseResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PowerOfficeGo\Model\BaseResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\PowerOfficeGo\Model\GetBankJournalVoucherResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ('\PowerOfficeGo\Model\GetBankJournalVoucherResponse' !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\PowerOfficeGo\Model\GetBankJournalVoucherResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -234,14 +292,25 @@ class VoucherApi
      */
     public function createOrUpdateBankJournalVoucherAsyncWithHttpInfo($bank_journal_voucher = null)
     {
-        $returnType = '';
+        $returnType = '\PowerOfficeGo\Model\GetBankJournalVoucherResponse';
         $request = $this->createOrUpdateBankJournalVoucherRequest($bank_journal_voucher);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1242,11 +1311,12 @@ class VoucherApi
      *
      * @throws \PowerOfficeGo\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \PowerOfficeGo\Model\GetBankJournalVoucherResponse|\PowerOfficeGo\Model\BaseResponse
      */
     public function getBankJournalVoucher($id)
     {
-        $this->getBankJournalVoucherWithHttpInfo($id);
+        list($response) = $this->getBankJournalVoucherWithHttpInfo($id);
+        return $response;
     }
 
     /**
@@ -1258,7 +1328,7 @@ class VoucherApi
      *
      * @throws \PowerOfficeGo\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PowerOfficeGo\Model\GetBankJournalVoucherResponse|\PowerOfficeGo\Model\BaseResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBankJournalVoucherWithHttpInfo($id)
     {
@@ -1292,10 +1362,67 @@ class VoucherApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\PowerOfficeGo\Model\GetBankJournalVoucherResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ('\PowerOfficeGo\Model\GetBankJournalVoucherResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PowerOfficeGo\Model\GetBankJournalVoucherResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\PowerOfficeGo\Model\BaseResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ('\PowerOfficeGo\Model\BaseResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PowerOfficeGo\Model\BaseResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\PowerOfficeGo\Model\GetBankJournalVoucherResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ('\PowerOfficeGo\Model\GetBankJournalVoucherResponse' !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\PowerOfficeGo\Model\GetBankJournalVoucherResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -1341,14 +1468,25 @@ class VoucherApi
      */
     public function getBankJournalVoucherAsyncWithHttpInfo($id)
     {
-        $returnType = '';
+        $returnType = '\PowerOfficeGo\Model\GetBankJournalVoucherResponse';
         $request = $this->getBankJournalVoucherRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -2393,11 +2531,12 @@ class VoucherApi
      *
      * @throws \PowerOfficeGo\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \PowerOfficeGo\Model\SearchBankJournalVoucherResponse|\PowerOfficeGo\Model\BaseResponse
      */
     public function searchBankJournalVoucher($filter = null)
     {
-        $this->searchBankJournalVoucherWithHttpInfo($filter);
+        list($response) = $this->searchBankJournalVoucherWithHttpInfo($filter);
+        return $response;
     }
 
     /**
@@ -2409,7 +2548,7 @@ class VoucherApi
      *
      * @throws \PowerOfficeGo\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PowerOfficeGo\Model\SearchBankJournalVoucherResponse|\PowerOfficeGo\Model\BaseResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchBankJournalVoucherWithHttpInfo($filter = null)
     {
@@ -2443,10 +2582,67 @@ class VoucherApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\PowerOfficeGo\Model\SearchBankJournalVoucherResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ('\PowerOfficeGo\Model\SearchBankJournalVoucherResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PowerOfficeGo\Model\SearchBankJournalVoucherResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\PowerOfficeGo\Model\BaseResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ('\PowerOfficeGo\Model\BaseResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PowerOfficeGo\Model\BaseResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\PowerOfficeGo\Model\SearchBankJournalVoucherResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ('\PowerOfficeGo\Model\SearchBankJournalVoucherResponse' !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\PowerOfficeGo\Model\SearchBankJournalVoucherResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -2492,14 +2688,25 @@ class VoucherApi
      */
     public function searchBankJournalVoucherAsyncWithHttpInfo($filter = null)
     {
-        $returnType = '';
+        $returnType = '\PowerOfficeGo\Model\SearchBankJournalVoucherResponse';
         $request = $this->searchBankJournalVoucherRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
