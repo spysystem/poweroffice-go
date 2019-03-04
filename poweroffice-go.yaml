@@ -771,7 +771,7 @@ definitions:
       dueDate:
         type: string
       invoiceNo:
-        type: number
+        type: integer
       description:
         type: string
       isReversed:
