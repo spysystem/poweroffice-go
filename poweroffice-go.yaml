@@ -405,6 +405,8 @@ paths:
       responses:
         200:
           description: OK
+          schema:
+            $ref: '#/definitions/SearchBankJournalVoucherResponse'
         401:
           $ref: '#/responses/Unauthorized'
     post:
@@ -420,6 +422,8 @@ paths:
       responses:
         200:
           description: OK
+          schema:
+            $ref: '#/definitions/GetBankJournalVoucherResponse'
         401:
           $ref: '#/responses/Unauthorized'
 
@@ -438,9 +442,10 @@ paths:
       responses:
         200:
           description: OK
+          schema:
+            $ref: '#/definitions/GetBankJournalVoucherResponse'
         401:
           $ref: '#/responses/Unauthorized'
-
 
   /Reporting/CustomerLedger:
     get:
@@ -975,6 +980,24 @@ definitions:
         type: string
       voucherNo:
         type: integer
+
+  GetBankJournalVoucherResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            $ref: '#/definitions/BankJournalVoucher'
+
+  SearchBankJournalVoucherResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/definitions/BankJournalVoucher'
 #endregion
 
 #region CustomerLedger
