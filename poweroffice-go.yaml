@@ -491,6 +491,24 @@ paths:
         401:
           $ref: '#/responses/Unauthorized'
 
+  /GeneralLedgerAccount:
+    get:
+      summary: Search GeneralLedgerAccount
+      operationId: SearchGeneralLedgerAccount
+      tags:
+        - Ledger
+      parameters:
+        - name: $filter
+          in: query
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchGeneralLedgerAccountResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
 definitions:
 #region Authentication
   Authentication:
@@ -1044,6 +1062,7 @@ definitions:
             type: array
             items:
               $ref: '#/definitions/CustomerLedgerEntry'
+
   GetCustomerLedgerEntryResponse:
     allOf:
       - $ref: '#/definitions/BaseResponse'
@@ -1051,4 +1070,46 @@ definitions:
         properties:
           data:
             $ref: '#/definitions/CustomerLedgerEntry'
+#endregion
+
+#region GeneralLedgerAccount
+  GeneralLedgerAccount:
+    type: object
+    properties:
+      id:
+        type: integer
+      code:
+        type: integer
+      createdFromImportJournalId:
+        type: string
+      currencyCode:
+        type: string
+      departmentCode:
+        type: string
+      isActive:
+        type: boolean
+      isDepartmentRequired:
+        type: boolean
+      isProjectRequired:
+        type: boolean
+      isVatCodeLockedAfterPosting:
+        type: boolean
+      lastChanged:
+        type: string
+      name:
+        type: string
+      projectCode:
+        type: string
+      vatCode:
+        type: string
+
+  SearchGeneralLedgerAccountResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/definitions/GeneralLedgerAccount'
 #endregion
