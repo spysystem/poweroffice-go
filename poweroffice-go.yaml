@@ -509,6 +509,24 @@ paths:
         401:
           $ref: '#/responses/Unauthorized'
 
+  /VatCode:
+    get:
+      summary: Search Vat Code
+      operationId: SearchVatCode
+      tags:
+        - Ledger
+      parameters:
+        - name: $filter
+          in: query
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchVatCodeResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
 definitions:
 #region Authentication
   Authentication:
@@ -1112,4 +1130,32 @@ definitions:
             type: array
             items:
               $ref: '#/definitions/GeneralLedgerAccount'
+#endregion
+
+#region VATCodes
+  VatCode:
+    type: object
+    properties:
+      id:
+        type: integer
+      code:
+        type: string
+      description:
+        type: string
+      isActive:
+        type: boolean
+      name:
+        type: string
+      rate:
+        type: number
+
+  SearchVatCodeResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/definitions/VatCode'
 #endregion
