@@ -99,6 +99,7 @@ Class | Method | HTTP request | Description
 *LedgerApi* | [**getCustomerLedger**](docs/Api/LedgerApi.md#getcustomerledger) | **GET** /Reporting/CustomerLedger/{matchId} | Get Customer Ledgers
 *LedgerApi* | [**searchCustomerLedger**](docs/Api/LedgerApi.md#searchcustomerledger) | **GET** /Reporting/CustomerLedger | Search CustomerLedgers
 *LedgerApi* | [**searchGeneralLedgerAccount**](docs/Api/LedgerApi.md#searchgeneralledgeraccount) | **GET** /GeneralLedgerAccount | Search GeneralLedgerAccount
+*LedgerApi* | [**searchVatCode**](docs/Api/LedgerApi.md#searchvatcode) | **GET** /VatCode | Search Vat Code
 *VoucherApi* | [**createOrUpdateBankJournalVoucher**](docs/Api/VoucherApi.md#createorupdatebankjournalvoucher) | **POST** /Voucher/BankJournalVoucher | Create or Update ManualJournalVoucher
 *VoucherApi* | [**createOrUpdateIncomingInvoiceVoucher**](docs/Api/VoucherApi.md#createorupdateincominginvoicevoucher) | **POST** /Voucher/IncomingInvoiceVoucher | Create or Update Incoming Invoice Voucher
 *VoucherApi* | [**createOrUpdateManualJournalVoucher**](docs/Api/VoucherApi.md#createorupdatemanualjournalvoucher) | **POST** /Voucher/ManualJournalVoucher | Create or Update ManualJournalVoucher
@@ -148,8 +149,10 @@ Class | Method | HTTP request | Description
  - [SearchManualJournalVoucherResponse](docs/Model/SearchManualJournalVoucherResponse.md)
  - [SearchOutgoingInvoiceVoucherResponse](docs/Model/SearchOutgoingInvoiceVoucherResponse.md)
  - [SearchSupplierResponse](docs/Model/SearchSupplierResponse.md)
+ - [SearchVatCodeResponse](docs/Model/SearchVatCodeResponse.md)
  - [Supplier](docs/Model/Supplier.md)
  - [Validation](docs/Model/Validation.md)
+ - [VatCode](docs/Model/VatCode.md)
 
 
 ## Documentation For Authorization
