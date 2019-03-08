@@ -98,6 +98,7 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**searchSuppliers**](docs/Api/ContactsApi.md#searchsuppliers) | **GET** /Supplier | Search Suppliers
 *LedgerApi* | [**getCustomerLedger**](docs/Api/LedgerApi.md#getcustomerledger) | **GET** /Reporting/CustomerLedger/{matchId} | Get Customer Ledgers
 *LedgerApi* | [**searchCustomerLedger**](docs/Api/LedgerApi.md#searchcustomerledger) | **GET** /Reporting/CustomerLedger | Search CustomerLedgers
+*LedgerApi* | [**searchGeneralLedgerAccount**](docs/Api/LedgerApi.md#searchgeneralledgeraccount) | **GET** /GeneralLedgerAccount | Search GeneralLedgerAccount
 *VoucherApi* | [**createOrUpdateBankJournalVoucher**](docs/Api/VoucherApi.md#createorupdatebankjournalvoucher) | **POST** /Voucher/BankJournalVoucher | Create or Update ManualJournalVoucher
 *VoucherApi* | [**createOrUpdateIncomingInvoiceVoucher**](docs/Api/VoucherApi.md#createorupdateincominginvoicevoucher) | **POST** /Voucher/IncomingInvoiceVoucher | Create or Update Incoming Invoice Voucher
 *VoucherApi* | [**createOrUpdateManualJournalVoucher**](docs/Api/VoucherApi.md#createorupdatemanualjournalvoucher) | **POST** /Voucher/ManualJournalVoucher | Create or Update ManualJournalVoucher
@@ -122,6 +123,7 @@ Class | Method | HTTP request | Description
  - [ContactGroup](docs/Model/ContactGroup.md)
  - [Customer](docs/Model/Customer.md)
  - [CustomerLedgerEntry](docs/Model/CustomerLedgerEntry.md)
+ - [GeneralLedgerAccount](docs/Model/GeneralLedgerAccount.md)
  - [GetBankJournalVoucherResponse](docs/Model/GetBankJournalVoucherResponse.md)
  - [GetContactGroupResponse](docs/Model/GetContactGroupResponse.md)
  - [GetCustomerLedgerEntryResponse](docs/Model/GetCustomerLedgerEntryResponse.md)
@@ -141,6 +143,7 @@ Class | Method | HTTP request | Description
  - [SearchContactGroupResponse](docs/Model/SearchContactGroupResponse.md)
  - [SearchCustomerLedgerEntryResponse](docs/Model/SearchCustomerLedgerEntryResponse.md)
  - [SearchCustomerResponse](docs/Model/SearchCustomerResponse.md)
+ - [SearchGeneralLedgerAccountResponse](docs/Model/SearchGeneralLedgerAccountResponse.md)
  - [SearchIncomingInvoiceVoucherResponse](docs/Model/SearchIncomingInvoiceVoucherResponse.md)
  - [SearchManualJournalVoucherResponse](docs/Model/SearchManualJournalVoucherResponse.md)
  - [SearchOutgoingInvoiceVoucherResponse](docs/Model/SearchOutgoingInvoiceVoucherResponse.md)
