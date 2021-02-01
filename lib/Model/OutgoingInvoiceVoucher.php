@@ -65,6 +65,8 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
         'delivery_date' => 'string',
         'delivery_term' => 'string',
         'due_date' => 'string',
+        'external_import_reference' => 'string',
+        'imported_voucher_no' => 'int',
         'invoice_no' => 'int',
         'description' => 'string',
         'is_reversed' => 'bool',
@@ -87,6 +89,8 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
         'delivery_date' => null,
         'delivery_term' => null,
         'due_date' => null,
+        'external_import_reference' => null,
+        'imported_voucher_no' => null,
         'invoice_no' => null,
         'description' => null,
         'is_reversed' => null,
@@ -130,6 +134,8 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
         'delivery_date' => 'deliveryDate',
         'delivery_term' => 'deliveryTerm',
         'due_date' => 'dueDate',
+        'external_import_reference' => 'externalImportReference',
+        'imported_voucher_no' => 'importedVoucherNo',
         'invoice_no' => 'invoiceNo',
         'description' => 'description',
         'is_reversed' => 'isReversed',
@@ -152,6 +158,8 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
         'delivery_date' => 'setDeliveryDate',
         'delivery_term' => 'setDeliveryTerm',
         'due_date' => 'setDueDate',
+        'external_import_reference' => 'setExternalImportReference',
+        'imported_voucher_no' => 'setImportedVoucherNo',
         'invoice_no' => 'setInvoiceNo',
         'description' => 'setDescription',
         'is_reversed' => 'setIsReversed',
@@ -174,6 +182,8 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
         'delivery_date' => 'getDeliveryDate',
         'delivery_term' => 'getDeliveryTerm',
         'due_date' => 'getDueDate',
+        'external_import_reference' => 'getExternalImportReference',
+        'imported_voucher_no' => 'getImportedVoucherNo',
         'invoice_no' => 'getInvoiceNo',
         'description' => 'getDescription',
         'is_reversed' => 'getIsReversed',
@@ -250,6 +260,8 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
         $this->container['delivery_date'] = isset($data['delivery_date']) ? $data['delivery_date'] : null;
         $this->container['delivery_term'] = isset($data['delivery_term']) ? $data['delivery_term'] : null;
         $this->container['due_date'] = isset($data['due_date']) ? $data['due_date'] : null;
+        $this->container['external_import_reference'] = isset($data['external_import_reference']) ? $data['external_import_reference'] : null;
+        $this->container['imported_voucher_no'] = isset($data['imported_voucher_no']) ? $data['imported_voucher_no'] : null;
         $this->container['invoice_no'] = isset($data['invoice_no']) ? $data['invoice_no'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['is_reversed'] = isset($data['is_reversed']) ? $data['is_reversed'] : null;
@@ -470,6 +482,54 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
     public function setDueDate($due_date)
     {
         $this->container['due_date'] = $due_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_import_reference
+     *
+     * @return string|null
+     */
+    public function getExternalImportReference()
+    {
+        return $this->container['external_import_reference'];
+    }
+
+    /**
+     * Sets external_import_reference
+     *
+     * @param string|null $external_import_reference external_import_reference
+     *
+     * @return $this
+     */
+    public function setExternalImportReference($external_import_reference)
+    {
+        $this->container['external_import_reference'] = $external_import_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets imported_voucher_no
+     *
+     * @return int|null
+     */
+    public function getImportedVoucherNo()
+    {
+        return $this->container['imported_voucher_no'];
+    }
+
+    /**
+     * Sets imported_voucher_no
+     *
+     * @param int|null $imported_voucher_no imported_voucher_no
+     *
+     * @return $this
+     */
+    public function setImportedVoucherNo($imported_voucher_no)
+    {
+        $this->container['imported_voucher_no'] = $imported_voucher_no;
 
         return $this;
     }

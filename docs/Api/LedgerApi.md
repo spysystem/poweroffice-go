@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchCustomerLedger**
-> \PowerOfficeGo\Model\SearchCustomerLedgerEntryResponse searchCustomerLedger($to_date, $filter)
+> \PowerOfficeGo\Model\SearchCustomerLedgerEntryResponse searchCustomerLedger($to_date, $filter, $from_date)
 
 Search CustomerLedgers
 
@@ -84,9 +84,10 @@ $apiInstance = new PowerOfficeGo\Api\LedgerApi(
 );
 $to_date = 'to_date_example'; // string | 
 $filter = 'filter_example'; // string | 
+$from_date = 'from_date_example'; // string | 
 
 try {
-    $result = $apiInstance->searchCustomerLedger($to_date, $filter);
+    $result = $apiInstance->searchCustomerLedger($to_date, $filter, $from_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LedgerApi->searchCustomerLedger: ', $e->getMessage(), PHP_EOL;
@@ -100,6 +101,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **to_date** | **string**|  |
  **filter** | **string**|  | [optional]
+ **from_date** | **string**|  | [optional]
 
 ### Return type
 

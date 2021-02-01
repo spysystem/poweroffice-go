@@ -100,7 +100,7 @@ Class | Method | HTTP request | Description
 *LedgerApi* | [**searchCustomerLedger**](docs/Api/LedgerApi.md#searchcustomerledger) | **GET** /Reporting/CustomerLedger | Search CustomerLedgers
 *LedgerApi* | [**searchGeneralLedgerAccount**](docs/Api/LedgerApi.md#searchgeneralledgeraccount) | **GET** /GeneralLedgerAccount | Search GeneralLedgerAccount
 *LedgerApi* | [**searchVatCode**](docs/Api/LedgerApi.md#searchvatcode) | **GET** /VatCode | Search Vat Code
-*VoucherApi* | [**createOrUpdateBankJournalVoucher**](docs/Api/VoucherApi.md#createorupdatebankjournalvoucher) | **POST** /Voucher/BankJournalVoucher | Create or Update ManualJournalVoucher
+*VoucherApi* | [**createOrUpdateBankJournalVoucher**](docs/Api/VoucherApi.md#createorupdatebankjournalvoucher) | **POST** /Voucher/BankJournalVoucher | Create or Update BankJournalVoucher
 *VoucherApi* | [**createOrUpdateIncomingInvoiceVoucher**](docs/Api/VoucherApi.md#createorupdateincominginvoicevoucher) | **POST** /Voucher/IncomingInvoiceVoucher | Create or Update Incoming Invoice Voucher
 *VoucherApi* | [**createOrUpdateManualJournalVoucher**](docs/Api/VoucherApi.md#createorupdatemanualjournalvoucher) | **POST** /Voucher/ManualJournalVoucher | Create or Update ManualJournalVoucher
 *VoucherApi* | [**createOrUpdateOutgoingInvoiceVoucher**](docs/Api/VoucherApi.md#createorupdateoutgoinginvoicevoucher) | **POST** /Voucher/OutgoingInvoiceVoucher | Create or Update Outgoing Invoice Voucher

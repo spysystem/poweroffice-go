@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **currency_rate** | **float** |  | [optional] 
 **supplier_code** | **int** |  | [optional] 
 **due_date** | **string** |  | [optional] 
+**external_import_reference** | **string** |  | [optional] 
+**imported_voucher_no** | **int** |  | [optional] 
 **invoice_no** | **string** |  | [optional] 
 **is_reversed** | **bool** |  | [optional] 
 **lines** | [**\PowerOfficeGo\Model\IncomingInvoiceVoucherLine[]**](IncomingInvoiceVoucherLine.md) |  | [optional] 

@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **delivery_date** | **string** |  | [optional] 
 **delivery_term** | **string** |  | [optional] 
 **due_date** | **string** |  | [optional] 
+**external_import_reference** | **string** |  | [optional] 
+**imported_voucher_no** | **int** |  | [optional] 
 **invoice_no** | **int** |  | [optional] 
 **description** | **string** |  | [optional] 
 **is_reversed** | **bool** |  | [optional] 

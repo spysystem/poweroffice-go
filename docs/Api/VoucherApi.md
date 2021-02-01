@@ -4,7 +4,7 @@ All URIs are relative to *https://api-demo.poweroffice.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createOrUpdateBankJournalVoucher**](VoucherApi.md#createOrUpdateBankJournalVoucher) | **POST** /Voucher/BankJournalVoucher | Create or Update ManualJournalVoucher
+[**createOrUpdateBankJournalVoucher**](VoucherApi.md#createOrUpdateBankJournalVoucher) | **POST** /Voucher/BankJournalVoucher | Create or Update BankJournalVoucher
 [**createOrUpdateIncomingInvoiceVoucher**](VoucherApi.md#createOrUpdateIncomingInvoiceVoucher) | **POST** /Voucher/IncomingInvoiceVoucher | Create or Update Incoming Invoice Voucher
 [**createOrUpdateManualJournalVoucher**](VoucherApi.md#createOrUpdateManualJournalVoucher) | **POST** /Voucher/ManualJournalVoucher | Create or Update ManualJournalVoucher
 [**createOrUpdateOutgoingInvoiceVoucher**](VoucherApi.md#createOrUpdateOutgoingInvoiceVoucher) | **POST** /Voucher/OutgoingInvoiceVoucher | Create or Update Outgoing Invoice Voucher
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 # **createOrUpdateBankJournalVoucher**
 > \PowerOfficeGo\Model\GetBankJournalVoucherResponse createOrUpdateBankJournalVoucher($bank_journal_voucher)
 
-Create or Update ManualJournalVoucher
+Create or Update BankJournalVoucher
 
 ### Example
 ```php

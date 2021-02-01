@@ -119,6 +119,20 @@ class IncomingInvoiceVoucherTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "external_import_reference"
+     */
+    public function testPropertyExternalImportReference()
+    {
+    }
+
+    /**
+     * Test attribute "imported_voucher_no"
+     */
+    public function testPropertyImportedVoucherNo()
+    {
+    }
+
+    /**
      * Test attribute "invoice_no"
      */
     public function testPropertyInvoiceNo()

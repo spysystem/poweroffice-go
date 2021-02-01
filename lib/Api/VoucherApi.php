@@ -129,7 +129,7 @@ class VoucherApi
     /**
      * Operation createOrUpdateBankJournalVoucher
      *
-     * Create or Update ManualJournalVoucher
+     * Create or Update BankJournalVoucher
      *
      * @param  \PowerOfficeGo\Model\BankJournalVoucher $bank_journal_voucher bank_journal_voucher (optional)
      *
@@ -146,7 +146,7 @@ class VoucherApi
     /**
      * Operation createOrUpdateBankJournalVoucherWithHttpInfo
      *
-     * Create or Update ManualJournalVoucher
+     * Create or Update BankJournalVoucher
      *
      * @param  \PowerOfficeGo\Model\BankJournalVoucher $bank_journal_voucher (optional)
      *
@@ -263,7 +263,7 @@ class VoucherApi
     /**
      * Operation createOrUpdateBankJournalVoucherAsync
      *
-     * Create or Update ManualJournalVoucher
+     * Create or Update BankJournalVoucher
      *
      * @param  \PowerOfficeGo\Model\BankJournalVoucher $bank_journal_voucher (optional)
      *
@@ -283,7 +283,7 @@ class VoucherApi
     /**
      * Operation createOrUpdateBankJournalVoucherAsyncWithHttpInfo
      *
-     * Create or Update ManualJournalVoucher
+     * Create or Update BankJournalVoucher
      *
      * @param  \PowerOfficeGo\Model\BankJournalVoucher $bank_journal_voucher (optional)
      *

@@ -447,14 +447,15 @@ class LedgerApi
      *
      * @param  string $to_date to_date (required)
      * @param  string $filter filter (optional)
+     * @param  string $from_date from_date (optional)
      *
      * @throws \PowerOfficeGo\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \PowerOfficeGo\Model\SearchCustomerLedgerEntryResponse|\PowerOfficeGo\Model\BaseResponse
      */
-    public function searchCustomerLedger($to_date, $filter = null)
+    public function searchCustomerLedger($to_date, $filter = null, $from_date = null)
     {
-        list($response) = $this->searchCustomerLedgerWithHttpInfo($to_date, $filter);
+        list($response) = $this->searchCustomerLedgerWithHttpInfo($to_date, $filter, $from_date);
         return $response;
     }
 
@@ -465,14 +466,15 @@ class LedgerApi
      *
      * @param  string $to_date (required)
      * @param  string $filter (optional)
+     * @param  string $from_date (optional)
      *
      * @throws \PowerOfficeGo\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \PowerOfficeGo\Model\SearchCustomerLedgerEntryResponse|\PowerOfficeGo\Model\BaseResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchCustomerLedgerWithHttpInfo($to_date, $filter = null)
+    public function searchCustomerLedgerWithHttpInfo($to_date, $filter = null, $from_date = null)
     {
-        $request = $this->searchCustomerLedgerRequest($to_date, $filter);
+        $request = $this->searchCustomerLedgerRequest($to_date, $filter, $from_date);
 
         try {
             $options = $this->createHttpClientOption();
@@ -583,13 +585,14 @@ class LedgerApi
      *
      * @param  string $to_date (required)
      * @param  string $filter (optional)
+     * @param  string $from_date (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchCustomerLedgerAsync($to_date, $filter = null)
+    public function searchCustomerLedgerAsync($to_date, $filter = null, $from_date = null)
     {
-        return $this->searchCustomerLedgerAsyncWithHttpInfo($to_date, $filter)
+        return $this->searchCustomerLedgerAsyncWithHttpInfo($to_date, $filter, $from_date)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -604,14 +607,15 @@ class LedgerApi
      *
      * @param  string $to_date (required)
      * @param  string $filter (optional)
+     * @param  string $from_date (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchCustomerLedgerAsyncWithHttpInfo($to_date, $filter = null)
+    public function searchCustomerLedgerAsyncWithHttpInfo($to_date, $filter = null, $from_date = null)
     {
         $returnType = '\PowerOfficeGo\Model\SearchCustomerLedgerEntryResponse';
-        $request = $this->searchCustomerLedgerRequest($to_date, $filter);
+        $request = $this->searchCustomerLedgerRequest($to_date, $filter, $from_date);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -652,11 +656,12 @@ class LedgerApi
      *
      * @param  string $to_date (required)
      * @param  string $filter (optional)
+     * @param  string $from_date (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function searchCustomerLedgerRequest($to_date, $filter = null)
+    public function searchCustomerLedgerRequest($to_date, $filter = null, $from_date = null)
     {
         // verify the required parameter 'to_date' is set
         if ($to_date === null || (is_array($to_date) && count($to_date) === 0)) {
@@ -679,6 +684,10 @@ class LedgerApi
         // query params
         if ($filter !== null) {
             $queryParams['$filter'] = ObjectSerializer::toQueryValue($filter);
+        }
+        // query params
+        if ($from_date !== null) {
+            $queryParams['fromDate'] = ObjectSerializer::toQueryValue($from_date);
         }
 
 
