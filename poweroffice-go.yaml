@@ -410,7 +410,7 @@ paths:
         401:
           $ref: '#/responses/Unauthorized'
     post:
-      summary: Create or Update ManualJournalVoucher
+      summary: Create or Update BankJournalVoucher
       operationId: CreateOrUpdateBankJournalVoucher
       tags:
         - Voucher
@@ -459,6 +459,9 @@ paths:
           required: true
           type: string
         - name: $filter
+          in: query
+          type: string
+        - name: fromDate
           in: query
           type: string
       responses:
@@ -811,6 +814,10 @@ definitions:
         type: string
       dueDate:
         type: string
+      externalImportReference:
+        type: string
+      importedVoucherNo:
+        type: integer
       invoiceNo:
         type: integer
       description:
@@ -876,6 +883,10 @@ definitions:
         type: integer
       dueDate:
         type: string
+      externalImportReference:
+        type: string
+      importedVoucherNo:
+        type: integer
       invoiceNo:
         type: string
       isReversed:
@@ -941,6 +952,10 @@ definitions:
         type: string
       description:
         type: string
+      externalImportReference:
+        type: string
+      importedVoucherNo:
+        type: integer
       isReversed:
         type: boolean
       lines:
@@ -1006,6 +1021,10 @@ definitions:
         type: string
       description:
         type: string
+      externalImportReference:
+        type: string
+      importedVoucherNo:
+        type: integer
       isReversed:
         type: boolean
       lines:
