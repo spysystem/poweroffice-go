@@ -84,6 +84,13 @@ class OutgoingInvoiceVoucherTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "cid"
+     */
+    public function testPropertyCid()
+    {
+    }
+
+    /**
      * Test attribute "created_date"
      */
     public function testPropertyCreatedDate()

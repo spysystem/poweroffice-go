@@ -58,6 +58,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'id' => 'int',
+        'cid' => 'string',
         'created_date' => 'string',
         'currency_code' => 'string',
         'currency_rate' => 'float',
@@ -82,6 +83,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'id' => null,
+        'cid' => null,
         'created_date' => null,
         'currency_code' => null,
         'currency_rate' => null,
@@ -127,6 +129,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
+        'cid' => 'cid',
         'created_date' => 'createdDate',
         'currency_code' => 'currencyCode',
         'currency_rate' => 'currencyRate',
@@ -151,6 +154,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
+        'cid' => 'setCid',
         'created_date' => 'setCreatedDate',
         'currency_code' => 'setCurrencyCode',
         'currency_rate' => 'setCurrencyRate',
@@ -175,6 +179,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
+        'cid' => 'getCid',
         'created_date' => 'getCreatedDate',
         'currency_code' => 'getCurrencyCode',
         'currency_rate' => 'getCurrencyRate',
@@ -253,6 +258,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['cid'] = isset($data['cid']) ? $data['cid'] : null;
         $this->container['created_date'] = isset($data['created_date']) ? $data['created_date'] : null;
         $this->container['currency_code'] = isset($data['currency_code']) ? $data['currency_code'] : null;
         $this->container['currency_rate'] = isset($data['currency_rate']) ? $data['currency_rate'] : null;
@@ -314,6 +320,30 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets cid
+     *
+     * @return string|null
+     */
+    public function getCid()
+    {
+        return $this->container['cid'];
+    }
+
+    /**
+     * Sets cid
+     *
+     * @param string|null $cid cid
+     *
+     * @return $this
+     */
+    public function setCid($cid)
+    {
+        $this->container['cid'] = $cid;
 
         return $this;
     }
