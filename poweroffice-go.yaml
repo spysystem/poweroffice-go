@@ -800,6 +800,8 @@ definitions:
     properties:
       id:
         type: integer
+      cid:
+        type: string
       createdDate:
         type: string
       currencyCode:
