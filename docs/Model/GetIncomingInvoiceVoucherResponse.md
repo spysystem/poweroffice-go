@@ -1,10 +1,11 @@
-# GetIncomingInvoiceVoucherResponse
+# # GetIncomingInvoiceVoucherResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\PowerOfficeGo\Model\IncomingInvoiceVoucher**](IncomingInvoiceVoucher.md) |  | [optional] 
+**success** | **bool** |  |
+**validation** | [**\PowerOfficeGo\Model\Validation**](Validation.md) |  | [optional]
+**data** | [**\PowerOfficeGo\Model\IncomingInvoiceVoucher**](IncomingInvoiceVoucher.md) |  | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

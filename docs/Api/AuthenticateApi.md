@@ -1,21 +1,26 @@
 # PowerOfficeGo\AuthenticateApi
 
-All URIs are relative to *https://api-demo.poweroffice.net*
+All URIs are relative to https://api-demo.poweroffice.net, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getAccessToken**](AuthenticateApi.md#getAccessToken) | **POST** /OAuth/Token | Get Access Token
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getAccessToken()**](AuthenticateApi.md#getAccessToken) | **POST** /OAuth/Token | Get Access Token |
 
 
-# **getAccessToken**
-> \PowerOfficeGo\Model\AuthenticationResponse getAccessToken($grant_type, $refresh_token)
+## `getAccessToken()`
+
+```php
+getAccessToken($grant_type, $refresh_token): \PowerOfficeGo\Model\AuthenticationResponse
+```
 
 Get Access Token
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 // Configure HTTP basic authorization: BasicAuth
 $config = PowerOfficeGo\Configuration::getDefaultConfiguration()
@@ -29,8 +34,8 @@ $apiInstance = new PowerOfficeGo\Api\AuthenticateApi(
     new GuzzleHttp\Client(),
     $config
 );
-$grant_type = 'grant_type_example'; // string | 
-$refresh_token = 'refresh_token_example'; // string | 
+$grant_type = 'grant_type_example'; // string
+$refresh_token = 'refresh_token_example'; // string
 
 try {
     $result = $apiInstance->getAccessToken($grant_type, $refresh_token);
@@ -38,15 +43,14 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AuthenticateApi->getAccessToken: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **grant_type** | **string**|  |
- **refresh_token** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **grant_type** | **string**|  | |
+| **refresh_token** | **string**|  | [optional] |
 
 ### Return type
 
@@ -58,8 +62,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
- - **Accept**: application/json
+- **Content-Type**: `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)

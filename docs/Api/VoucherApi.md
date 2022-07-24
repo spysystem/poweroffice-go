@@ -1,35 +1,41 @@
 # PowerOfficeGo\VoucherApi
 
-All URIs are relative to *https://api-demo.poweroffice.net*
+All URIs are relative to https://api-demo.poweroffice.net, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createOrUpdateBankJournalVoucher**](VoucherApi.md#createOrUpdateBankJournalVoucher) | **POST** /Voucher/BankJournalVoucher | Create or Update BankJournalVoucher
-[**createOrUpdateIncomingInvoiceVoucher**](VoucherApi.md#createOrUpdateIncomingInvoiceVoucher) | **POST** /Voucher/IncomingInvoiceVoucher | Create or Update Incoming Invoice Voucher
-[**createOrUpdateManualJournalVoucher**](VoucherApi.md#createOrUpdateManualJournalVoucher) | **POST** /Voucher/ManualJournalVoucher | Create or Update ManualJournalVoucher
-[**createOrUpdateOutgoingInvoiceVoucher**](VoucherApi.md#createOrUpdateOutgoingInvoiceVoucher) | **POST** /Voucher/OutgoingInvoiceVoucher | Create or Update Outgoing Invoice Voucher
-[**getBankJournalVoucher**](VoucherApi.md#getBankJournalVoucher) | **GET** /Voucher/BankJournalVoucher/{id} | Get BankJournalVoucher
-[**getIncomingInvoiceVoucher**](VoucherApi.md#getIncomingInvoiceVoucher) | **GET** /Voucher/IncomingInvoiceVoucher/{id} | Get Incoming Invoice Voucher
-[**getManualJournalVoucher**](VoucherApi.md#getManualJournalVoucher) | **GET** /Voucher/ManualJournalVoucher/{id} | Get ManualJournalVoucher
-[**getOutgoingInvoiceVoucher**](VoucherApi.md#getOutgoingInvoiceVoucher) | **GET** /Voucher/OutgoingInvoiceVoucher/{id} | Get Outgoing Invoice Voucher
-[**searchBankJournalVoucher**](VoucherApi.md#searchBankJournalVoucher) | **GET** /Voucher/BankJournalVoucher | Search Bank Journal Vouchers
-[**searchIncomingInvoiceVoucher**](VoucherApi.md#searchIncomingInvoiceVoucher) | **GET** /Voucher/IncomingInvoiceVoucher | Search Incoming Invoice Vouchers
-[**searchManualJournalVoucher**](VoucherApi.md#searchManualJournalVoucher) | **GET** /Voucher/ManualJournalVoucher | Search Manual Journal Vouchers
-[**searchOutgoingInvoiceVoucher**](VoucherApi.md#searchOutgoingInvoiceVoucher) | **GET** /Voucher/OutgoingInvoiceVoucher | Search Outgoing Invoice Vouchers
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createOrUpdateBankJournalVoucher()**](VoucherApi.md#createOrUpdateBankJournalVoucher) | **POST** /Voucher/BankJournalVoucher | Create or Update BankJournalVoucher |
+| [**createOrUpdateIncomingInvoiceVoucher()**](VoucherApi.md#createOrUpdateIncomingInvoiceVoucher) | **POST** /Voucher/IncomingInvoiceVoucher | Create or Update Incoming Invoice Voucher |
+| [**createOrUpdateManualJournalVoucher()**](VoucherApi.md#createOrUpdateManualJournalVoucher) | **POST** /Voucher/ManualJournalVoucher | Create or Update ManualJournalVoucher |
+| [**createOrUpdateOutgoingInvoiceVoucher()**](VoucherApi.md#createOrUpdateOutgoingInvoiceVoucher) | **POST** /Voucher/OutgoingInvoiceVoucher | Create or Update Outgoing Invoice Voucher |
+| [**getBankJournalVoucher()**](VoucherApi.md#getBankJournalVoucher) | **GET** /Voucher/BankJournalVoucher/{id} | Get BankJournalVoucher |
+| [**getIncomingInvoiceVoucher()**](VoucherApi.md#getIncomingInvoiceVoucher) | **GET** /Voucher/IncomingInvoiceVoucher/{id} | Get Incoming Invoice Voucher |
+| [**getManualJournalVoucher()**](VoucherApi.md#getManualJournalVoucher) | **GET** /Voucher/ManualJournalVoucher/{id} | Get ManualJournalVoucher |
+| [**getOutgoingInvoiceVoucher()**](VoucherApi.md#getOutgoingInvoiceVoucher) | **GET** /Voucher/OutgoingInvoiceVoucher/{id} | Get Outgoing Invoice Voucher |
+| [**searchBankJournalVoucher()**](VoucherApi.md#searchBankJournalVoucher) | **GET** /Voucher/BankJournalVoucher | Search Bank Journal Vouchers |
+| [**searchIncomingInvoiceVoucher()**](VoucherApi.md#searchIncomingInvoiceVoucher) | **GET** /Voucher/IncomingInvoiceVoucher | Search Incoming Invoice Vouchers |
+| [**searchManualJournalVoucher()**](VoucherApi.md#searchManualJournalVoucher) | **GET** /Voucher/ManualJournalVoucher | Search Manual Journal Vouchers |
+| [**searchOutgoingInvoiceVoucher()**](VoucherApi.md#searchOutgoingInvoiceVoucher) | **GET** /Voucher/OutgoingInvoiceVoucher | Search Outgoing Invoice Vouchers |
 
 
-# **createOrUpdateBankJournalVoucher**
-> \PowerOfficeGo\Model\GetBankJournalVoucherResponse createOrUpdateBankJournalVoucher($bank_journal_voucher)
+## `createOrUpdateBankJournalVoucher()`
+
+```php
+createOrUpdateBankJournalVoucher($data): \PowerOfficeGo\Model\GetBankJournalVoucherResponse
+```
 
 Create or Update BankJournalVoucher
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
 // Configure OAuth2 access token for authorization: oAuth
 $config = PowerOfficeGo\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -37,22 +43,21 @@ $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     new GuzzleHttp\Client(),
     $config
 );
-$bank_journal_voucher = new \PowerOfficeGo\Model\BankJournalVoucher(); // \PowerOfficeGo\Model\BankJournalVoucher | 
+$data = new \PowerOfficeGo\Model\BankJournalVoucher(); // \PowerOfficeGo\Model\BankJournalVoucher
 
 try {
-    $result = $apiInstance->createOrUpdateBankJournalVoucher($bank_journal_voucher);
+    $result = $apiInstance->createOrUpdateBankJournalVoucher($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->createOrUpdateBankJournalVoucher: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bank_journal_voucher** | [**\PowerOfficeGo\Model\BankJournalVoucher**](../Model/BankJournalVoucher.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **data** | [**\PowerOfficeGo\Model\BankJournalVoucher**](../Model/BankJournalVoucher.md)|  | [optional] |
 
 ### Return type
 
@@ -64,23 +69,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **createOrUpdateIncomingInvoiceVoucher**
-> \PowerOfficeGo\Model\GetIncomingInvoiceVoucherResponse createOrUpdateIncomingInvoiceVoucher($incoming_invoice_voucher)
+## `createOrUpdateIncomingInvoiceVoucher()`
+
+```php
+createOrUpdateIncomingInvoiceVoucher($data): \PowerOfficeGo\Model\GetIncomingInvoiceVoucherResponse
+```
 
 Create or Update Incoming Invoice Voucher
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
 // Configure OAuth2 access token for authorization: oAuth
 $config = PowerOfficeGo\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -88,22 +101,21 @@ $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     new GuzzleHttp\Client(),
     $config
 );
-$incoming_invoice_voucher = new \PowerOfficeGo\Model\IncomingInvoiceVoucher(); // \PowerOfficeGo\Model\IncomingInvoiceVoucher | 
+$data = new \PowerOfficeGo\Model\IncomingInvoiceVoucher(); // \PowerOfficeGo\Model\IncomingInvoiceVoucher
 
 try {
-    $result = $apiInstance->createOrUpdateIncomingInvoiceVoucher($incoming_invoice_voucher);
+    $result = $apiInstance->createOrUpdateIncomingInvoiceVoucher($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->createOrUpdateIncomingInvoiceVoucher: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **incoming_invoice_voucher** | [**\PowerOfficeGo\Model\IncomingInvoiceVoucher**](../Model/IncomingInvoiceVoucher.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **data** | [**\PowerOfficeGo\Model\IncomingInvoiceVoucher**](../Model/IncomingInvoiceVoucher.md)|  | [optional] |
 
 ### Return type
 
@@ -115,23 +127,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **createOrUpdateManualJournalVoucher**
-> \PowerOfficeGo\Model\GetManualJournalVoucherResponse createOrUpdateManualJournalVoucher($manual_journal_voucher)
+## `createOrUpdateManualJournalVoucher()`
+
+```php
+createOrUpdateManualJournalVoucher($data): \PowerOfficeGo\Model\GetManualJournalVoucherResponse
+```
 
 Create or Update ManualJournalVoucher
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
 // Configure OAuth2 access token for authorization: oAuth
 $config = PowerOfficeGo\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -139,22 +159,21 @@ $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     new GuzzleHttp\Client(),
     $config
 );
-$manual_journal_voucher = new \PowerOfficeGo\Model\ManualJournalVoucher(); // \PowerOfficeGo\Model\ManualJournalVoucher | 
+$data = new \PowerOfficeGo\Model\ManualJournalVoucher(); // \PowerOfficeGo\Model\ManualJournalVoucher
 
 try {
-    $result = $apiInstance->createOrUpdateManualJournalVoucher($manual_journal_voucher);
+    $result = $apiInstance->createOrUpdateManualJournalVoucher($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->createOrUpdateManualJournalVoucher: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **manual_journal_voucher** | [**\PowerOfficeGo\Model\ManualJournalVoucher**](../Model/ManualJournalVoucher.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **data** | [**\PowerOfficeGo\Model\ManualJournalVoucher**](../Model/ManualJournalVoucher.md)|  | [optional] |
 
 ### Return type
 
@@ -166,23 +185,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **createOrUpdateOutgoingInvoiceVoucher**
-> \PowerOfficeGo\Model\GetOutgoingInvoiceVoucherResponse createOrUpdateOutgoingInvoiceVoucher($outgoing_invoice_voucher)
+## `createOrUpdateOutgoingInvoiceVoucher()`
+
+```php
+createOrUpdateOutgoingInvoiceVoucher($data): \PowerOfficeGo\Model\GetOutgoingInvoiceVoucherResponse
+```
 
 Create or Update Outgoing Invoice Voucher
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
 // Configure OAuth2 access token for authorization: oAuth
 $config = PowerOfficeGo\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -190,22 +217,21 @@ $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     new GuzzleHttp\Client(),
     $config
 );
-$outgoing_invoice_voucher = new \PowerOfficeGo\Model\OutgoingInvoiceVoucher(); // \PowerOfficeGo\Model\OutgoingInvoiceVoucher | 
+$data = new \PowerOfficeGo\Model\OutgoingInvoiceVoucher(); // \PowerOfficeGo\Model\OutgoingInvoiceVoucher
 
 try {
-    $result = $apiInstance->createOrUpdateOutgoingInvoiceVoucher($outgoing_invoice_voucher);
+    $result = $apiInstance->createOrUpdateOutgoingInvoiceVoucher($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->createOrUpdateOutgoingInvoiceVoucher: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **outgoing_invoice_voucher** | [**\PowerOfficeGo\Model\OutgoingInvoiceVoucher**](../Model/OutgoingInvoiceVoucher.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **data** | [**\PowerOfficeGo\Model\OutgoingInvoiceVoucher**](../Model/OutgoingInvoiceVoucher.md)|  | [optional] |
 
 ### Return type
 
@@ -217,23 +243,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getBankJournalVoucher**
-> \PowerOfficeGo\Model\GetBankJournalVoucherResponse getBankJournalVoucher($id)
+## `getBankJournalVoucher()`
+
+```php
+getBankJournalVoucher($id): \PowerOfficeGo\Model\GetBankJournalVoucherResponse
+```
 
 Get BankJournalVoucher
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
 // Configure OAuth2 access token for authorization: oAuth
 $config = PowerOfficeGo\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -249,14 +283,13 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->getBankJournalVoucher: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| description |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| description | |
 
 ### Return type
 
@@ -268,23 +301,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getIncomingInvoiceVoucher**
-> \PowerOfficeGo\Model\GetIncomingInvoiceVoucherResponse getIncomingInvoiceVoucher($id)
+## `getIncomingInvoiceVoucher()`
+
+```php
+getIncomingInvoiceVoucher($id): \PowerOfficeGo\Model\GetIncomingInvoiceVoucherResponse
+```
 
 Get Incoming Invoice Voucher
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
 // Configure OAuth2 access token for authorization: oAuth
 $config = PowerOfficeGo\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -300,14 +341,13 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->getIncomingInvoiceVoucher: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| description |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| description | |
 
 ### Return type
 
@@ -319,23 +359,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getManualJournalVoucher**
-> \PowerOfficeGo\Model\GetManualJournalVoucherResponse getManualJournalVoucher($id)
+## `getManualJournalVoucher()`
+
+```php
+getManualJournalVoucher($id): \PowerOfficeGo\Model\GetManualJournalVoucherResponse
+```
 
 Get ManualJournalVoucher
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
 // Configure OAuth2 access token for authorization: oAuth
 $config = PowerOfficeGo\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -351,14 +399,13 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->getManualJournalVoucher: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| description |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| description | |
 
 ### Return type
 
@@ -370,23 +417,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **getOutgoingInvoiceVoucher**
-> \PowerOfficeGo\Model\GetOutgoingInvoiceVoucherResponse getOutgoingInvoiceVoucher($id)
+## `getOutgoingInvoiceVoucher()`
+
+```php
+getOutgoingInvoiceVoucher($id): \PowerOfficeGo\Model\GetOutgoingInvoiceVoucherResponse
+```
 
 Get Outgoing Invoice Voucher
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
 // Configure OAuth2 access token for authorization: oAuth
 $config = PowerOfficeGo\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -402,14 +457,13 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->getOutgoingInvoiceVoucher: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| description |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| description | |
 
 ### Return type
 
@@ -421,23 +475,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **searchBankJournalVoucher**
-> \PowerOfficeGo\Model\SearchBankJournalVoucherResponse searchBankJournalVoucher($filter)
+## `searchBankJournalVoucher()`
+
+```php
+searchBankJournalVoucher($filter): \PowerOfficeGo\Model\SearchBankJournalVoucherResponse
+```
 
 Search Bank Journal Vouchers
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
 // Configure OAuth2 access token for authorization: oAuth
 $config = PowerOfficeGo\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -445,7 +507,7 @@ $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string | 
+$filter = 'filter_example'; // string
 
 try {
     $result = $apiInstance->searchBankJournalVoucher($filter);
@@ -453,14 +515,13 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->searchBankJournalVoucher: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -472,23 +533,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **searchIncomingInvoiceVoucher**
-> \PowerOfficeGo\Model\SearchIncomingInvoiceVoucherResponse searchIncomingInvoiceVoucher($filter)
+## `searchIncomingInvoiceVoucher()`
+
+```php
+searchIncomingInvoiceVoucher($filter): \PowerOfficeGo\Model\SearchIncomingInvoiceVoucherResponse
+```
 
 Search Incoming Invoice Vouchers
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
 // Configure OAuth2 access token for authorization: oAuth
 $config = PowerOfficeGo\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -496,7 +565,7 @@ $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string | 
+$filter = 'filter_example'; // string
 
 try {
     $result = $apiInstance->searchIncomingInvoiceVoucher($filter);
@@ -504,14 +573,13 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->searchIncomingInvoiceVoucher: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -523,23 +591,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **searchManualJournalVoucher**
-> \PowerOfficeGo\Model\SearchManualJournalVoucherResponse searchManualJournalVoucher($filter)
+## `searchManualJournalVoucher()`
+
+```php
+searchManualJournalVoucher($filter): \PowerOfficeGo\Model\SearchManualJournalVoucherResponse
+```
 
 Search Manual Journal Vouchers
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
 // Configure OAuth2 access token for authorization: oAuth
 $config = PowerOfficeGo\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -547,7 +623,7 @@ $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string | 
+$filter = 'filter_example'; // string
 
 try {
     $result = $apiInstance->searchManualJournalVoucher($filter);
@@ -555,14 +631,13 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->searchManualJournalVoucher: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -574,23 +649,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **searchOutgoingInvoiceVoucher**
-> \PowerOfficeGo\Model\SearchOutgoingInvoiceVoucherResponse searchOutgoingInvoiceVoucher($filter)
+## `searchOutgoingInvoiceVoucher()`
+
+```php
+searchOutgoingInvoiceVoucher($filter): \PowerOfficeGo\Model\SearchOutgoingInvoiceVoucherResponse
+```
 
 Search Outgoing Invoice Vouchers
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
 // Configure OAuth2 access token for authorization: oAuth
 $config = PowerOfficeGo\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -598,7 +681,7 @@ $apiInstance = new PowerOfficeGo\Api\VoucherApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string | 
+$filter = 'filter_example'; // string
 
 try {
     $result = $apiInstance->searchOutgoingInvoiceVoucher($filter);
@@ -606,14 +689,13 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->searchOutgoingInvoiceVoucher: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -625,8 +707,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
