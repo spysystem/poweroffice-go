@@ -1,6 +1,5 @@
 {
     "name": "spysystem/poweroffice-go",
-    "version": "1.1.1.1",
     "description": "PowerOffice Go API.",
     "keywords": [
         "openapitools",

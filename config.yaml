@@ -1,6 +1,5 @@
 # https://openapi-generator.tech/docs/usage/#generate
 apiPackage: Api
-artifactVersion: 1.1.1.1
 gitRepoId: poweroffice-go
 gitUserId: spysystem
 invokerPackage: PowerOfficeGo
