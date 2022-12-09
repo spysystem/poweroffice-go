@@ -27,6 +27,7 @@ tags:
   - name: Contacts
   - name: Voucher
   - name: Ledger
+  - name: Company
 
 responses:
   Unauthorized:
@@ -57,6 +58,20 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/AuthenticationResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+  /Client:
+    get:
+      summary: Get Client
+      operationId: GetClient
+      tags:
+        - Company
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetClientResponse'
         401:
           $ref: '#/responses/Unauthorized'
 
@@ -596,6 +611,91 @@ definitions:
         type: integer
       isPrimary:
         type: boolean
+#endregion
+
+#region Client
+  Client:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      legalName:
+        type: string
+      vatNumber:
+        type: string
+      mailAddress:
+        $ref: '#/definitions/MailAddress'
+      streetAddress:
+        $ref: '#/definitions/MailAddress'
+      emailAddress:
+        type: string
+      phoneNumber:
+        type: string
+      websiteUrl:
+        type: string
+      lastChanged:
+        type: string
+      lockDate:
+        type: string
+        description:
+          Gets the lock date on the client. It's not possible to create accounting entries on this date or any previous date on this client.
+      salesAccountCode:
+        type: integer
+      vatExemptSalesAccountCode:
+        type: integer
+      isVatRegistered:
+        type: boolean
+      vatPeriod:
+        type: integer
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+        description: >
+          Gets the specified Value Added Tax period on this client. The VAT period states how often VAT is reported to the government from this client.
+          0 - None (No defined VAT period)
+          1 - Weekly (Every week)
+          2 - HalfMonthly (Half-Monthly)
+          3 - Monthly (Every month)
+          4 - BiMonthly (Every two months)
+          5 - Yearly (Once a year)
+          6 - HalfYearly (Twice a year)
+          7 - Quarterly (Four times a year)
+      FinancialYearEndMonth:
+        type: integer
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          - 10
+          - 11
+          - 12
+        description: >
+          Gets the end month for the accounting period.
+          0 - None (None, error value)
+          1-12 Month number
+
+  GetClientResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            $ref: '#/definitions/Client'
 #endregion
 
 #region Customer
