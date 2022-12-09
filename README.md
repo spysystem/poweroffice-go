@@ -80,6 +80,7 @@ All URIs are relative to *https://api-demo.poweroffice.net*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuthenticateApi* | [**getAccessToken**](docs/Api/AuthenticateApi.md#getaccesstoken) | **POST** /OAuth/Token | Get Access Token
+*CompanyApi* | [**getClient**](docs/Api/CompanyApi.md#getclient) | **GET** /Client | Get Client
 *ContactsApi* | [**createOrUpdateContactGroup**](docs/Api/ContactsApi.md#createorupdatecontactgroup) | **POST** /ContactGroup | Create or Update Contact Group
 *ContactsApi* | [**createOrUpdateCustomer**](docs/Api/ContactsApi.md#createorupdatecustomer) | **POST** /Customer | Create or Update Customer
 *ContactsApi* | [**createOrUpdateSupplier**](docs/Api/ContactsApi.md#createorupdatesupplier) | **POST** /Supplier | Create or Update Supplier
@@ -112,12 +113,15 @@ Class | Method | HTTP request | Description
 - [BankJournalVoucher](docs/Model/BankJournalVoucher.md)
 - [BankJournalVoucherLine](docs/Model/BankJournalVoucherLine.md)
 - [BaseResponse](docs/Model/BaseResponse.md)
+- [Client](docs/Model/Client.md)
 - [ContactGroup](docs/Model/ContactGroup.md)
 - [Customer](docs/Model/Customer.md)
 - [CustomerLedgerEntry](docs/Model/CustomerLedgerEntry.md)
 - [GeneralLedgerAccount](docs/Model/GeneralLedgerAccount.md)
 - [GetBankJournalVoucherResponse](docs/Model/GetBankJournalVoucherResponse.md)
 - [GetBankJournalVoucherResponseAllOf](docs/Model/GetBankJournalVoucherResponseAllOf.md)
+- [GetClientResponse](docs/Model/GetClientResponse.md)
+- [GetClientResponseAllOf](docs/Model/GetClientResponseAllOf.md)
 - [GetContactGroupResponse](docs/Model/GetContactGroupResponse.md)
 - [GetContactGroupResponseAllOf](docs/Model/GetContactGroupResponseAllOf.md)
 - [GetCustomerLedgerEntryResponse](docs/Model/GetCustomerLedgerEntryResponse.md)
