@@ -1,6 +1,3 @@
-.gitignore
-.php-cs-fixer.dist.php
-.travis.yml
 README.md
 composer.json
 docs/Api/AuthenticateApi.md
@@ -61,7 +58,6 @@ docs/Model/SearchVatCodeResponseAllOf.md
 docs/Model/Supplier.md
 docs/Model/Validation.md
 docs/Model/VatCode.md
-git_push.sh
 lib/Api/AuthenticateApi.php
 lib/Api/ContactsApi.php
 lib/Api/LedgerApi.php
@@ -233,7 +229,6 @@ lib/Model/VatCode.php
 lib/Model/VatCodeModelAttributes.php
 lib/Model/VatCodeModelFields.php
 lib/ObjectSerializer.php
-phpunit.xml.dist
 test/Api/AuthenticateApiTest.php
 test/Api/ContactsApiTest.php
 test/Api/LedgerApiTest.php
