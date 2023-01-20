@@ -130,6 +130,38 @@ paths:
         401:
           $ref: '#/responses/Unauthorized'
 
+  /Reporting/CustomerBalance:
+    get:
+      summary: Service to query CustomerBalance
+      operationId: GetCustomersBalance
+      tags:
+        - Contacts
+      parameters:
+        - name: toDate
+          in: query
+          type: string
+          required: false
+        - name: contactGroup
+          in: query
+          type: string
+          required: false
+        - name: subledgerNumberSeriesId
+          in: query
+          type: string
+          required: false
+        - name: includeOnlyOpenItems
+          in: query
+          type: boolean
+          required: false
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetCustomerBalanceResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
+
   /ContactGroup:
     get:
       summary: Search Contact Groups
@@ -783,7 +815,31 @@ definitions:
             items:
               $ref: '#/definitions/Customer'
 
-#endregion
+  GetCustomerBalanceResponse:
+    allOf:
+      - $ref: "#/definitions/BaseResponse"
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/definitions/CustomerBalance'
+
+  CustomerBalance:
+    type: object
+    properties:
+      'customerId':
+        type: integer
+      'customerName':
+        type: string
+      'customerCode':
+        type: string
+      'customerExternalCode':
+        type: integer
+      'balance':
+        type: number
+
+  #endregion
 
 #region Supplier
   Supplier:
@@ -910,6 +966,8 @@ definitions:
         type: number
       customerCode:
         type: integer
+      customMatchingReference:
+        type: string
       deliveryDate:
         type: string
       deliveryTerm:
@@ -1191,6 +1249,13 @@ definitions:
         type: string
       customer:
         $ref: '#/definitions/Customer'
+      customMatchingReference:
+        type: string
+      externalImportReference:
+        type: string
+      documentNo:
+        type: string
+
 
   SearchCustomerLedgerEntryResponse:
     allOf:
