@@ -213,4 +213,31 @@ class CustomerLedgerEntryTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "custom_matching_reference"
+     */
+    public function testPropertyCustomMatchingReference()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "external_import_reference"
+     */
+    public function testPropertyExternalImportReference()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "document_no"
+     */
+    public function testPropertyDocumentNo()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

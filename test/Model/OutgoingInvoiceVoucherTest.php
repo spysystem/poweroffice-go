@@ -134,6 +134,15 @@ class OutgoingInvoiceVoucherTest extends TestCase
     }
 
     /**
+     * Test attribute "custom_matching_reference"
+     */
+    public function testPropertyCustomMatchingReference()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "delivery_date"
      */
     public function testPropertyDeliveryDate()

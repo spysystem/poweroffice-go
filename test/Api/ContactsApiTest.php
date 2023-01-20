@@ -132,6 +132,18 @@ class ContactsApiTest extends TestCase
     }
 
     /**
+     * Test case for getCustomersBalance
+     *
+     * Service to query CustomerBalance.
+     *
+     */
+    public function testGetCustomersBalance()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getSupplier
      *
      * Get Supplier.

@@ -86,6 +86,7 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**createOrUpdateSupplier**](docs/Api/ContactsApi.md#createorupdatesupplier) | **POST** /Supplier | Create or Update Supplier
 *ContactsApi* | [**getContactGroup**](docs/Api/ContactsApi.md#getcontactgroup) | **GET** /ContactGroup/{id} | Get Contact Group
 *ContactsApi* | [**getCustomer**](docs/Api/ContactsApi.md#getcustomer) | **GET** /Customer/{id} | Get Customer
+*ContactsApi* | [**getCustomersBalance**](docs/Api/ContactsApi.md#getcustomersbalance) | **GET** /Reporting/CustomerBalance | Service to query CustomerBalance
 *ContactsApi* | [**getSupplier**](docs/Api/ContactsApi.md#getsupplier) | **GET** /Supplier/{id} | Get Supplier
 *ContactsApi* | [**searchContactGroups**](docs/Api/ContactsApi.md#searchcontactgroups) | **GET** /ContactGroup | Search Contact Groups
 *ContactsApi* | [**searchCustomers**](docs/Api/ContactsApi.md#searchcustomers) | **GET** /Customer | Search Customers
@@ -116,6 +117,7 @@ Class | Method | HTTP request | Description
 - [Client](docs/Model/Client.md)
 - [ContactGroup](docs/Model/ContactGroup.md)
 - [Customer](docs/Model/Customer.md)
+- [CustomerBalance](docs/Model/CustomerBalance.md)
 - [CustomerLedgerEntry](docs/Model/CustomerLedgerEntry.md)
 - [GeneralLedgerAccount](docs/Model/GeneralLedgerAccount.md)
 - [GetBankJournalVoucherResponse](docs/Model/GetBankJournalVoucherResponse.md)
@@ -124,6 +126,8 @@ Class | Method | HTTP request | Description
 - [GetClientResponseAllOf](docs/Model/GetClientResponseAllOf.md)
 - [GetContactGroupResponse](docs/Model/GetContactGroupResponse.md)
 - [GetContactGroupResponseAllOf](docs/Model/GetContactGroupResponseAllOf.md)
+- [GetCustomerBalanceResponse](docs/Model/GetCustomerBalanceResponse.md)
+- [GetCustomerBalanceResponseAllOf](docs/Model/GetCustomerBalanceResponseAllOf.md)
 - [GetCustomerLedgerEntryResponse](docs/Model/GetCustomerLedgerEntryResponse.md)
 - [GetCustomerLedgerEntryResponseAllOf](docs/Model/GetCustomerLedgerEntryResponseAllOf.md)
 - [GetCustomerResponse](docs/Model/GetCustomerResponse.md)

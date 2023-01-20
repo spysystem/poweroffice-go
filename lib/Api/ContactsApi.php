@@ -126,6 +126,9 @@ class ContactsApi
         'getCustomer' => [
             'application/json',
         ],
+        'getCustomersBalance' => [
+            'application/json',
+        ],
         'getSupplier' => [
             'application/json',
         ],
@@ -1656,6 +1659,356 @@ class ContactsApi
                 $resourcePath
             );
         }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['*/*', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getCustomersBalance
+     *
+     * Service to query CustomerBalance
+     *
+     * @param  string $to_date to_date (optional)
+     * @param  string $contact_group contact_group (optional)
+     * @param  string $subledger_number_series_id subledger_number_series_id (optional)
+     * @param  bool $include_only_open_items include_only_open_items (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomersBalance'] to see the possible values for this operation
+     *
+     * @throws \PowerOfficeGo\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \PowerOfficeGo\Model\GetCustomerBalanceResponse|\PowerOfficeGo\Model\BaseResponse
+     */
+    public function getCustomersBalance($to_date = null, $contact_group = null, $subledger_number_series_id = null, $include_only_open_items = null, string $contentType = self::contentTypes['getCustomersBalance'][0])
+    {
+        list($response) = $this->getCustomersBalanceWithHttpInfo($to_date, $contact_group, $subledger_number_series_id, $include_only_open_items, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getCustomersBalanceWithHttpInfo
+     *
+     * Service to query CustomerBalance
+     *
+     * @param  string $to_date (optional)
+     * @param  string $contact_group (optional)
+     * @param  string $subledger_number_series_id (optional)
+     * @param  bool $include_only_open_items (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomersBalance'] to see the possible values for this operation
+     *
+     * @throws \PowerOfficeGo\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \PowerOfficeGo\Model\GetCustomerBalanceResponse|\PowerOfficeGo\Model\BaseResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCustomersBalanceWithHttpInfo($to_date = null, $contact_group = null, $subledger_number_series_id = null, $include_only_open_items = null, string $contentType = self::contentTypes['getCustomersBalance'][0])
+    {
+        $request = $this->getCustomersBalanceRequest($to_date, $contact_group, $subledger_number_series_id, $include_only_open_items, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\PowerOfficeGo\Model\GetCustomerBalanceResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\PowerOfficeGo\Model\GetCustomerBalanceResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PowerOfficeGo\Model\GetCustomerBalanceResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\PowerOfficeGo\Model\BaseResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\PowerOfficeGo\Model\BaseResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\PowerOfficeGo\Model\BaseResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\PowerOfficeGo\Model\GetCustomerBalanceResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\PowerOfficeGo\Model\GetCustomerBalanceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\PowerOfficeGo\Model\BaseResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCustomersBalanceAsync
+     *
+     * Service to query CustomerBalance
+     *
+     * @param  string $to_date (optional)
+     * @param  string $contact_group (optional)
+     * @param  string $subledger_number_series_id (optional)
+     * @param  bool $include_only_open_items (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomersBalance'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCustomersBalanceAsync($to_date = null, $contact_group = null, $subledger_number_series_id = null, $include_only_open_items = null, string $contentType = self::contentTypes['getCustomersBalance'][0])
+    {
+        return $this->getCustomersBalanceAsyncWithHttpInfo($to_date, $contact_group, $subledger_number_series_id, $include_only_open_items, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCustomersBalanceAsyncWithHttpInfo
+     *
+     * Service to query CustomerBalance
+     *
+     * @param  string $to_date (optional)
+     * @param  string $contact_group (optional)
+     * @param  string $subledger_number_series_id (optional)
+     * @param  bool $include_only_open_items (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomersBalance'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCustomersBalanceAsyncWithHttpInfo($to_date = null, $contact_group = null, $subledger_number_series_id = null, $include_only_open_items = null, string $contentType = self::contentTypes['getCustomersBalance'][0])
+    {
+        $returnType = '\PowerOfficeGo\Model\GetCustomerBalanceResponse';
+        $request = $this->getCustomersBalanceRequest($to_date, $contact_group, $subledger_number_series_id, $include_only_open_items, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCustomersBalance'
+     *
+     * @param  string $to_date (optional)
+     * @param  string $contact_group (optional)
+     * @param  string $subledger_number_series_id (optional)
+     * @param  bool $include_only_open_items (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomersBalance'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getCustomersBalanceRequest($to_date = null, $contact_group = null, $subledger_number_series_id = null, $include_only_open_items = null, string $contentType = self::contentTypes['getCustomersBalance'][0])
+    {
+
+
+
+
+
+
+        $resourcePath = '/Reporting/CustomerBalance';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $to_date,
+            'toDate', // param base name
+            'string', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $contact_group,
+            'contactGroup', // param base name
+            'string', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $subledger_number_series_id,
+            'subledgerNumberSeriesId', // param base name
+            'string', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $include_only_open_items,
+            'includeOnlyOpenItems', // param base name
+            'boolean', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+
+
 
 
         $headers = $this->headerSelector->selectHeaders(

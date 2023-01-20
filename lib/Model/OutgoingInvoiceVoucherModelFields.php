@@ -44,6 +44,7 @@ class OutgoingInvoiceVoucherModelFields
     public string $strCurrencyCode = 'currencyCode';
     public string $strCurrencyRate = 'currencyRate';
     public string $strCustomerCode = 'customerCode';
+    public string $strCustomMatchingReference = 'customMatchingReference';
     public string $strDeliveryDate = 'deliveryDate';
     public string $strDeliveryTerm = 'deliveryTerm';
     public string $strDueDate = 'dueDate';

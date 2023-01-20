@@ -12,6 +12,7 @@ docs/Model/BaseResponse.md
 docs/Model/Client.md
 docs/Model/ContactGroup.md
 docs/Model/Customer.md
+docs/Model/CustomerBalance.md
 docs/Model/CustomerLedgerEntry.md
 docs/Model/GeneralLedgerAccount.md
 docs/Model/GetBankJournalVoucherResponse.md
@@ -20,6 +21,8 @@ docs/Model/GetClientResponse.md
 docs/Model/GetClientResponseAllOf.md
 docs/Model/GetContactGroupResponse.md
 docs/Model/GetContactGroupResponseAllOf.md
+docs/Model/GetCustomerBalanceResponse.md
+docs/Model/GetCustomerBalanceResponseAllOf.md
 docs/Model/GetCustomerLedgerEntryResponse.md
 docs/Model/GetCustomerLedgerEntryResponseAllOf.md
 docs/Model/GetCustomerResponse.md
@@ -89,6 +92,9 @@ lib/Model/ContactGroup.php
 lib/Model/ContactGroupModelAttributes.php
 lib/Model/ContactGroupModelFields.php
 lib/Model/Customer.php
+lib/Model/CustomerBalance.php
+lib/Model/CustomerBalanceModelAttributes.php
+lib/Model/CustomerBalanceModelFields.php
 lib/Model/CustomerLedgerEntry.php
 lib/Model/CustomerLedgerEntryModelAttributes.php
 lib/Model/CustomerLedgerEntryModelFields.php
@@ -115,6 +121,12 @@ lib/Model/GetContactGroupResponseAllOfModelAttributes.php
 lib/Model/GetContactGroupResponseAllOfModelFields.php
 lib/Model/GetContactGroupResponseModelAttributes.php
 lib/Model/GetContactGroupResponseModelFields.php
+lib/Model/GetCustomerBalanceResponse.php
+lib/Model/GetCustomerBalanceResponseAllOf.php
+lib/Model/GetCustomerBalanceResponseAllOfModelAttributes.php
+lib/Model/GetCustomerBalanceResponseAllOfModelFields.php
+lib/Model/GetCustomerBalanceResponseModelAttributes.php
+lib/Model/GetCustomerBalanceResponseModelFields.php
 lib/Model/GetCustomerLedgerEntryResponse.php
 lib/Model/GetCustomerLedgerEntryResponseAllOf.php
 lib/Model/GetCustomerLedgerEntryResponseAllOfModelAttributes.php
@@ -254,6 +266,7 @@ test/Model/BankJournalVoucherTest.php
 test/Model/BaseResponseTest.php
 test/Model/ClientTest.php
 test/Model/ContactGroupTest.php
+test/Model/CustomerBalanceTest.php
 test/Model/CustomerLedgerEntryTest.php
 test/Model/CustomerTest.php
 test/Model/GeneralLedgerAccountTest.php
@@ -263,6 +276,8 @@ test/Model/GetClientResponseAllOfTest.php
 test/Model/GetClientResponseTest.php
 test/Model/GetContactGroupResponseAllOfTest.php
 test/Model/GetContactGroupResponseTest.php
+test/Model/GetCustomerBalanceResponseAllOfTest.php
+test/Model/GetCustomerBalanceResponseTest.php
 test/Model/GetCustomerLedgerEntryResponseAllOfTest.php
 test/Model/GetCustomerLedgerEntryResponseTest.php
 test/Model/GetCustomerResponseAllOfTest.php

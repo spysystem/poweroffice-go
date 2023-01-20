@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **currency_code** | **string** |  | [optional]
 **currency_rate** | **float** |  | [optional]
 **customer_code** | **int** |  | [optional]
+**custom_matching_reference** | **string** |  | [optional]
 **delivery_date** | **string** |  | [optional]
 **delivery_term** | **string** |  | [optional]
 **due_date** | **string** |  | [optional]

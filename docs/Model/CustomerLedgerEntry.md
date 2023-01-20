@@ -19,5 +19,8 @@ Name | Type | Description | Notes
 **last_changed** | **string** |  | [optional]
 **created_date** | **string** |  | [optional]
 **customer** | [**\PowerOfficeGo\Model\Customer**](Customer.md) |  | [optional]
+**custom_matching_reference** | **string** |  | [optional]
+**external_import_reference** | **string** |  | [optional]
+**document_no** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

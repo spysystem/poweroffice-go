@@ -83,6 +83,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
         'currency_code' => 'string',
         'currency_rate' => 'float',
         'customer_code' => 'int',
+        'custom_matching_reference' => 'string',
         'delivery_date' => 'string',
         'delivery_term' => 'string',
         'due_date' => 'string',
@@ -110,6 +111,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
         'currency_code' => null,
         'currency_rate' => null,
         'customer_code' => null,
+        'custom_matching_reference' => null,
         'delivery_date' => null,
         'delivery_term' => null,
         'due_date' => null,
@@ -135,6 +137,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
 		'currency_code' => false,
 		'currency_rate' => false,
 		'customer_code' => false,
+		'custom_matching_reference' => false,
 		'delivery_date' => false,
 		'delivery_term' => false,
 		'due_date' => false,
@@ -240,6 +243,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
         'currency_code' => 'currencyCode',
         'currency_rate' => 'currencyRate',
         'customer_code' => 'customerCode',
+        'custom_matching_reference' => 'customMatchingReference',
         'delivery_date' => 'deliveryDate',
         'delivery_term' => 'deliveryTerm',
         'due_date' => 'dueDate',
@@ -265,6 +269,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
         'currency_code' => 'setCurrencyCode',
         'currency_rate' => 'setCurrencyRate',
         'customer_code' => 'setCustomerCode',
+        'custom_matching_reference' => 'setCustomMatchingReference',
         'delivery_date' => 'setDeliveryDate',
         'delivery_term' => 'setDeliveryTerm',
         'due_date' => 'setDueDate',
@@ -290,6 +295,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
         'currency_code' => 'getCurrencyCode',
         'currency_rate' => 'getCurrencyRate',
         'customer_code' => 'getCustomerCode',
+        'custom_matching_reference' => 'getCustomMatchingReference',
         'delivery_date' => 'getDeliveryDate',
         'delivery_term' => 'getDeliveryTerm',
         'due_date' => 'getDueDate',
@@ -366,6 +372,7 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('currency_code', $data ?? [], null);
         $this->setIfExists('currency_rate', $data ?? [], null);
         $this->setIfExists('customer_code', $data ?? [], null);
+        $this->setIfExists('custom_matching_reference', $data ?? [], null);
         $this->setIfExists('delivery_date', $data ?? [], null);
         $this->setIfExists('delivery_term', $data ?? [], null);
         $this->setIfExists('due_date', $data ?? [], null);
@@ -591,6 +598,35 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
         }
 
         $this->container['customer_code'] = $customer_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_matching_reference
+     *
+     * @return string|null
+     */
+    public function getCustomMatchingReference()
+    {
+        return $this->container['custom_matching_reference'];
+    }
+
+    /**
+     * Sets custom_matching_reference
+     *
+     * @param string|null $custom_matching_reference custom_matching_reference
+     *
+     * @return self
+     */
+    public function setCustomMatchingReference($custom_matching_reference)
+    {
+
+        if (is_null($custom_matching_reference)) {
+            throw new \InvalidArgumentException('non-nullable custom_matching_reference cannot be null');
+        }
+
+        $this->container['custom_matching_reference'] = $custom_matching_reference;
 
         return $this;
     }

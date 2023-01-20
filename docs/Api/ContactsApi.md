@@ -9,6 +9,7 @@ All URIs are relative to https://api-demo.poweroffice.net, except if the operati
 | [**createOrUpdateSupplier()**](ContactsApi.md#createOrUpdateSupplier) | **POST** /Supplier | Create or Update Supplier |
 | [**getContactGroup()**](ContactsApi.md#getContactGroup) | **GET** /ContactGroup/{id} | Get Contact Group |
 | [**getCustomer()**](ContactsApi.md#getCustomer) | **GET** /Customer/{id} | Get Customer |
+| [**getCustomersBalance()**](ContactsApi.md#getCustomersBalance) | **GET** /Reporting/CustomerBalance | Service to query CustomerBalance |
 | [**getSupplier()**](ContactsApi.md#getSupplier) | **GET** /Supplier/{id} | Get Supplier |
 | [**searchContactGroups()**](ContactsApi.md#searchContactGroups) | **GET** /ContactGroup | Search Contact Groups |
 | [**searchCustomers()**](ContactsApi.md#searchCustomers) | **GET** /Customer | Search Customers |
@@ -291,6 +292,70 @@ try {
 ### Return type
 
 [**\PowerOfficeGo\Model\GetCustomerResponse**](../Model/GetCustomerResponse.md)
+
+### Authorization
+
+[oAuth](../../README.md#oAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getCustomersBalance()`
+
+```php
+getCustomersBalance($to_date, $contact_group, $subledger_number_series_id, $include_only_open_items): \PowerOfficeGo\Model\GetCustomerBalanceResponse
+```
+
+Service to query CustomerBalance
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oAuth
+$config = PowerOfficeGo\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new PowerOfficeGo\Api\ContactsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$to_date = 'to_date_example'; // string
+$contact_group = 'contact_group_example'; // string
+$subledger_number_series_id = 'subledger_number_series_id_example'; // string
+$include_only_open_items = True; // bool
+
+try {
+    $result = $apiInstance->getCustomersBalance($to_date, $contact_group, $subledger_number_series_id, $include_only_open_items);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ContactsApi->getCustomersBalance: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **to_date** | **string**|  | [optional] |
+| **contact_group** | **string**|  | [optional] |
+| **subledger_number_series_id** | **string**|  | [optional] |
+| **include_only_open_items** | **bool**|  | [optional] |
+
+### Return type
+
+[**\PowerOfficeGo\Model\GetCustomerBalanceResponse**](../Model/GetCustomerBalanceResponse.md)
 
 ### Authorization
 

@@ -91,7 +91,10 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
         'match_id' => 'int',
         'last_changed' => 'string',
         'created_date' => 'string',
-        'customer' => '\PowerOfficeGo\Model\Customer'
+        'customer' => '\PowerOfficeGo\Model\Customer',
+        'custom_matching_reference' => 'string',
+        'external_import_reference' => 'string',
+        'document_no' => 'string'
     ];
 
     /**
@@ -116,7 +119,10 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
         'match_id' => null,
         'last_changed' => null,
         'created_date' => null,
-        'customer' => null
+        'customer' => null,
+        'custom_matching_reference' => null,
+        'external_import_reference' => null,
+        'document_no' => null
     ];
 
     /**
@@ -139,7 +145,10 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
 		'match_id' => false,
 		'last_changed' => false,
 		'created_date' => false,
-		'customer' => false
+		'customer' => false,
+		'custom_matching_reference' => false,
+		'external_import_reference' => false,
+		'document_no' => false
     ];
 
     /**
@@ -242,7 +251,10 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
         'match_id' => 'matchId',
         'last_changed' => 'lastChanged',
         'created_date' => 'createdDate',
-        'customer' => 'customer'
+        'customer' => 'customer',
+        'custom_matching_reference' => 'customMatchingReference',
+        'external_import_reference' => 'externalImportReference',
+        'document_no' => 'documentNo'
     ];
 
     /**
@@ -265,7 +277,10 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
         'match_id' => 'setMatchId',
         'last_changed' => 'setLastChanged',
         'created_date' => 'setCreatedDate',
-        'customer' => 'setCustomer'
+        'customer' => 'setCustomer',
+        'custom_matching_reference' => 'setCustomMatchingReference',
+        'external_import_reference' => 'setExternalImportReference',
+        'document_no' => 'setDocumentNo'
     ];
 
     /**
@@ -288,7 +303,10 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
         'match_id' => 'getMatchId',
         'last_changed' => 'getLastChanged',
         'created_date' => 'getCreatedDate',
-        'customer' => 'getCustomer'
+        'customer' => 'getCustomer',
+        'custom_matching_reference' => 'getCustomMatchingReference',
+        'external_import_reference' => 'getExternalImportReference',
+        'document_no' => 'getDocumentNo'
     ];
 
     /**
@@ -363,6 +381,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('last_changed', $data ?? [], null);
         $this->setIfExists('created_date', $data ?? [], null);
         $this->setIfExists('customer', $data ?? [], null);
+        $this->setIfExists('custom_matching_reference', $data ?? [], null);
+        $this->setIfExists('external_import_reference', $data ?? [], null);
+        $this->setIfExists('document_no', $data ?? [], null);
     }
 
     /**
@@ -838,6 +859,93 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
         }
 
         $this->container['customer'] = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_matching_reference
+     *
+     * @return string|null
+     */
+    public function getCustomMatchingReference()
+    {
+        return $this->container['custom_matching_reference'];
+    }
+
+    /**
+     * Sets custom_matching_reference
+     *
+     * @param string|null $custom_matching_reference custom_matching_reference
+     *
+     * @return self
+     */
+    public function setCustomMatchingReference($custom_matching_reference)
+    {
+
+        if (is_null($custom_matching_reference)) {
+            throw new \InvalidArgumentException('non-nullable custom_matching_reference cannot be null');
+        }
+
+        $this->container['custom_matching_reference'] = $custom_matching_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_import_reference
+     *
+     * @return string|null
+     */
+    public function getExternalImportReference()
+    {
+        return $this->container['external_import_reference'];
+    }
+
+    /**
+     * Sets external_import_reference
+     *
+     * @param string|null $external_import_reference external_import_reference
+     *
+     * @return self
+     */
+    public function setExternalImportReference($external_import_reference)
+    {
+
+        if (is_null($external_import_reference)) {
+            throw new \InvalidArgumentException('non-nullable external_import_reference cannot be null');
+        }
+
+        $this->container['external_import_reference'] = $external_import_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets document_no
+     *
+     * @return string|null
+     */
+    public function getDocumentNo()
+    {
+        return $this->container['document_no'];
+    }
+
+    /**
+     * Sets document_no
+     *
+     * @param string|null $document_no document_no
+     *
+     * @return self
+     */
+    public function setDocumentNo($document_no)
+    {
+
+        if (is_null($document_no)) {
+            throw new \InvalidArgumentException('non-nullable document_no cannot be null');
+        }
+
+        $this->container['document_no'] = $document_no;
 
         return $this;
     }
