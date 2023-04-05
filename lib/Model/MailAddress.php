@@ -378,11 +378,9 @@ class MailAddress implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setCity($city)
     {
-
         if (is_null($city)) {
             throw new \InvalidArgumentException('non-nullable city cannot be null');
         }
-
         $this->container['city'] = $city;
 
         return $this;
@@ -407,11 +405,9 @@ class MailAddress implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setZipCode($zip_code)
     {
-
         if (is_null($zip_code)) {
             throw new \InvalidArgumentException('non-nullable zip_code cannot be null');
         }
-
         $this->container['zip_code'] = $zip_code;
 
         return $this;
@@ -436,11 +432,9 @@ class MailAddress implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setAddress1($address1)
     {
-
         if (is_null($address1)) {
             throw new \InvalidArgumentException('non-nullable address1 cannot be null');
         }
-
         $this->container['address1'] = $address1;
 
         return $this;
@@ -465,11 +459,9 @@ class MailAddress implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setAddress2($address2)
     {
-
         if (is_null($address2)) {
             throw new \InvalidArgumentException('non-nullable address2 cannot be null');
         }
-
         $this->container['address2'] = $address2;
 
         return $this;
@@ -494,11 +486,9 @@ class MailAddress implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setCountryCode($country_code)
     {
-
         if (is_null($country_code)) {
             throw new \InvalidArgumentException('non-nullable country_code cannot be null');
         }
-
         $this->container['country_code'] = $country_code;
 
         return $this;
@@ -523,11 +513,9 @@ class MailAddress implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setLastChanged($last_changed)
     {
-
         if (is_null($last_changed)) {
             throw new \InvalidArgumentException('non-nullable last_changed cannot be null');
         }
-
         $this->container['last_changed'] = $last_changed;
 
         return $this;
@@ -552,11 +540,9 @@ class MailAddress implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setId($id)
     {
-
         if (is_null($id)) {
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-
         $this->container['id'] = $id;
 
         return $this;
@@ -581,11 +567,9 @@ class MailAddress implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setIsPrimary($is_primary)
     {
-
         if (is_null($is_primary)) {
             throw new \InvalidArgumentException('non-nullable is_primary cannot be null');
         }
-
         $this->container['is_primary'] = $is_primary;
 
         return $this;

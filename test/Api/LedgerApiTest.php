@@ -84,6 +84,18 @@ class LedgerApiTest extends TestCase
     }
 
     /**
+     * Test case for searchAccountTransactions
+     *
+     * Search Account Transactions.
+     *
+     */
+    public function testSearchAccountTransactions()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for searchCustomerLedger
      *
      * Search CustomerLedgers.

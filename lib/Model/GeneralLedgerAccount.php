@@ -412,11 +412,9 @@ class GeneralLedgerAccount implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setId($id)
     {
-
         if (is_null($id)) {
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-
         $this->container['id'] = $id;
 
         return $this;
@@ -441,11 +439,9 @@ class GeneralLedgerAccount implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setCode($code)
     {
-
         if (is_null($code)) {
             throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
-
         $this->container['code'] = $code;
 
         return $this;
@@ -470,11 +466,9 @@ class GeneralLedgerAccount implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setCreatedFromImportJournalId($created_from_import_journal_id)
     {
-
         if (is_null($created_from_import_journal_id)) {
             throw new \InvalidArgumentException('non-nullable created_from_import_journal_id cannot be null');
         }
-
         $this->container['created_from_import_journal_id'] = $created_from_import_journal_id;
 
         return $this;
@@ -499,11 +493,9 @@ class GeneralLedgerAccount implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setCurrencyCode($currency_code)
     {
-
         if (is_null($currency_code)) {
             throw new \InvalidArgumentException('non-nullable currency_code cannot be null');
         }
-
         $this->container['currency_code'] = $currency_code;
 
         return $this;
@@ -528,11 +520,9 @@ class GeneralLedgerAccount implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setDepartmentCode($department_code)
     {
-
         if (is_null($department_code)) {
             throw new \InvalidArgumentException('non-nullable department_code cannot be null');
         }
-
         $this->container['department_code'] = $department_code;
 
         return $this;
@@ -557,11 +547,9 @@ class GeneralLedgerAccount implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setIsActive($is_active)
     {
-
         if (is_null($is_active)) {
             throw new \InvalidArgumentException('non-nullable is_active cannot be null');
         }
-
         $this->container['is_active'] = $is_active;
 
         return $this;
@@ -586,11 +574,9 @@ class GeneralLedgerAccount implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setIsDepartmentRequired($is_department_required)
     {
-
         if (is_null($is_department_required)) {
             throw new \InvalidArgumentException('non-nullable is_department_required cannot be null');
         }
-
         $this->container['is_department_required'] = $is_department_required;
 
         return $this;
@@ -615,11 +601,9 @@ class GeneralLedgerAccount implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setIsProjectRequired($is_project_required)
     {
-
         if (is_null($is_project_required)) {
             throw new \InvalidArgumentException('non-nullable is_project_required cannot be null');
         }
-
         $this->container['is_project_required'] = $is_project_required;
 
         return $this;
@@ -644,11 +628,9 @@ class GeneralLedgerAccount implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setIsVatCodeLockedAfterPosting($is_vat_code_locked_after_posting)
     {
-
         if (is_null($is_vat_code_locked_after_posting)) {
             throw new \InvalidArgumentException('non-nullable is_vat_code_locked_after_posting cannot be null');
         }
-
         $this->container['is_vat_code_locked_after_posting'] = $is_vat_code_locked_after_posting;
 
         return $this;
@@ -673,11 +655,9 @@ class GeneralLedgerAccount implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setLastChanged($last_changed)
     {
-
         if (is_null($last_changed)) {
             throw new \InvalidArgumentException('non-nullable last_changed cannot be null');
         }
-
         $this->container['last_changed'] = $last_changed;
 
         return $this;
@@ -702,11 +682,9 @@ class GeneralLedgerAccount implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setName($name)
     {
-
         if (is_null($name)) {
             throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-
         $this->container['name'] = $name;
 
         return $this;
@@ -731,11 +709,9 @@ class GeneralLedgerAccount implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setProjectCode($project_code)
     {
-
         if (is_null($project_code)) {
             throw new \InvalidArgumentException('non-nullable project_code cannot be null');
         }
-
         $this->container['project_code'] = $project_code;
 
         return $this;
@@ -760,11 +736,9 @@ class GeneralLedgerAccount implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setVatCode($vat_code)
     {
-
         if (is_null($vat_code)) {
             throw new \InvalidArgumentException('non-nullable vat_code cannot be null');
         }
-
         $this->container['vat_code'] = $vat_code;
 
         return $this;

@@ -363,11 +363,9 @@ class VatCode implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setId($id)
     {
-
         if (is_null($id)) {
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-
         $this->container['id'] = $id;
 
         return $this;
@@ -392,11 +390,9 @@ class VatCode implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setCode($code)
     {
-
         if (is_null($code)) {
             throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
-
         $this->container['code'] = $code;
 
         return $this;
@@ -421,11 +417,9 @@ class VatCode implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDescription($description)
     {
-
         if (is_null($description)) {
             throw new \InvalidArgumentException('non-nullable description cannot be null');
         }
-
         $this->container['description'] = $description;
 
         return $this;
@@ -450,11 +444,9 @@ class VatCode implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setIsActive($is_active)
     {
-
         if (is_null($is_active)) {
             throw new \InvalidArgumentException('non-nullable is_active cannot be null');
         }
-
         $this->container['is_active'] = $is_active;
 
         return $this;
@@ -479,11 +471,9 @@ class VatCode implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setName($name)
     {
-
         if (is_null($name)) {
             throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-
         $this->container['name'] = $name;
 
         return $this;
@@ -508,11 +498,9 @@ class VatCode implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setRate($rate)
     {
-
         if (is_null($rate)) {
             throw new \InvalidArgumentException('non-nullable rate cannot be null');
         }
-
         $this->container['rate'] = $rate;
 
         return $this;

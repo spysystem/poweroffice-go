@@ -524,11 +524,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setInvoiceDeliveryType($invoice_delivery_type)
     {
-
         if (is_null($invoice_delivery_type)) {
             throw new \InvalidArgumentException('non-nullable invoice_delivery_type cannot be null');
         }
-
         $this->container['invoice_delivery_type'] = $invoice_delivery_type;
 
         return $this;
@@ -553,11 +551,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setIsVatFree($is_vat_free)
     {
-
         if (is_null($is_vat_free)) {
             throw new \InvalidArgumentException('non-nullable is_vat_free cannot be null');
         }
-
         $this->container['is_vat_free'] = $is_vat_free;
 
         return $this;
@@ -582,11 +578,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDiscountPercent($discount_percent)
     {
-
         if (is_null($discount_percent)) {
             throw new \InvalidArgumentException('non-nullable discount_percent cannot be null');
         }
-
         $this->container['discount_percent'] = $discount_percent;
 
         return $this;
@@ -611,11 +605,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setInvoiceEmailAddress($invoice_email_address)
     {
-
         if (is_null($invoice_email_address)) {
             throw new \InvalidArgumentException('non-nullable invoice_email_address cannot be null');
         }
-
         $this->container['invoice_email_address'] = $invoice_email_address;
 
         return $this;
@@ -640,11 +632,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setPaymentTerms($payment_terms)
     {
-
         if (is_null($payment_terms)) {
             throw new \InvalidArgumentException('non-nullable payment_terms cannot be null');
         }
-
         $this->container['payment_terms'] = $payment_terms;
 
         return $this;
@@ -669,11 +659,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setUseFactoring($use_factoring)
     {
-
         if (is_null($use_factoring)) {
             throw new \InvalidArgumentException('non-nullable use_factoring cannot be null');
         }
-
         $this->container['use_factoring'] = $use_factoring;
 
         return $this;
@@ -698,11 +686,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSendReminders($send_reminders)
     {
-
         if (is_null($send_reminders)) {
             throw new \InvalidArgumentException('non-nullable send_reminders cannot be null');
         }
-
         $this->container['send_reminders'] = $send_reminders;
 
         return $this;
@@ -727,11 +713,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoNotAddLatePaymentFees($do_not_add_late_payment_fees)
     {
-
         if (is_null($do_not_add_late_payment_fees)) {
             throw new \InvalidArgumentException('non-nullable do_not_add_late_payment_fees cannot be null');
         }
-
         $this->container['do_not_add_late_payment_fees'] = $do_not_add_late_payment_fees;
 
         return $this;
@@ -756,11 +740,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoNotAddLatePaymentInterest($do_not_add_late_payment_interest)
     {
-
         if (is_null($do_not_add_late_payment_interest)) {
             throw new \InvalidArgumentException('non-nullable do_not_add_late_payment_interest cannot be null');
         }
-
         $this->container['do_not_add_late_payment_interest'] = $do_not_add_late_payment_interest;
 
         return $this;
@@ -785,11 +767,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDeliveryTerm($delivery_term)
     {
-
         if (is_null($delivery_term)) {
             throw new \InvalidArgumentException('non-nullable delivery_term cannot be null');
         }
-
         $this->container['delivery_term'] = $delivery_term;
 
         return $this;
@@ -814,11 +794,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setName($name)
     {
-
         if (is_null($name)) {
             throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-
         $this->container['name'] = $name;
 
         return $this;
@@ -843,11 +821,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setLegalName($legal_name)
     {
-
         if (is_null($legal_name)) {
             throw new \InvalidArgumentException('non-nullable legal_name cannot be null');
         }
-
         $this->container['legal_name'] = $legal_name;
 
         return $this;
@@ -872,11 +848,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setContactPersonId($contact_person_id)
     {
-
         if (is_null($contact_person_id)) {
             throw new \InvalidArgumentException('non-nullable contact_person_id cannot be null');
         }
-
         $this->container['contact_person_id'] = $contact_person_id;
 
         return $this;
@@ -901,11 +875,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setVatNumber($vat_number)
     {
-
         if (is_null($vat_number)) {
             throw new \InvalidArgumentException('non-nullable vat_number cannot be null');
         }
-
         $this->container['vat_number'] = $vat_number;
 
         return $this;
@@ -930,11 +902,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setWebsiteUrl($website_url)
     {
-
         if (is_null($website_url)) {
             throw new \InvalidArgumentException('non-nullable website_url cannot be null');
         }
-
         $this->container['website_url'] = $website_url;
 
         return $this;
@@ -959,11 +929,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSince($since)
     {
-
         if (is_null($since)) {
             throw new \InvalidArgumentException('non-nullable since cannot be null');
         }
-
         $this->container['since'] = $since;
 
         return $this;
@@ -988,11 +956,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setIsPerson($is_person)
     {
-
         if (is_null($is_person)) {
             throw new \InvalidArgumentException('non-nullable is_person cannot be null');
         }
-
         $this->container['is_person'] = $is_person;
 
         return $this;
@@ -1017,11 +983,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setCurrencyCode($currency_code)
     {
-
         if (is_null($currency_code)) {
             throw new \InvalidArgumentException('non-nullable currency_code cannot be null');
         }
-
         $this->container['currency_code'] = $currency_code;
 
         return $this;
@@ -1046,11 +1010,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setId($id)
     {
-
         if (is_null($id)) {
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-
         $this->container['id'] = $id;
 
         return $this;
@@ -1075,11 +1037,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setCode($code)
     {
-
         if (is_null($code)) {
             throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
-
         $this->container['code'] = $code;
 
         return $this;
@@ -1104,11 +1064,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setExternalCode($external_code)
     {
-
         if (is_null($external_code)) {
             throw new \InvalidArgumentException('non-nullable external_code cannot be null');
         }
-
         $this->container['external_code'] = $external_code;
 
         return $this;
@@ -1133,11 +1091,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setMailAddress($mail_address)
     {
-
         if (is_null($mail_address)) {
             throw new \InvalidArgumentException('non-nullable mail_address cannot be null');
         }
-
         $this->container['mail_address'] = $mail_address;
 
         return $this;
@@ -1162,11 +1118,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setStreetAddress($street_address)
     {
-
         if (is_null($street_address)) {
             throw new \InvalidArgumentException('non-nullable street_address cannot be null');
         }
-
         $this->container['street_address'] = $street_address;
 
         return $this;
@@ -1191,11 +1145,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setStreetAddresses($street_addresses)
     {
-
         if (is_null($street_addresses)) {
             throw new \InvalidArgumentException('non-nullable street_addresses cannot be null');
         }
-
         $this->container['street_addresses'] = $street_addresses;
 
         return $this;
@@ -1220,11 +1172,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setEmailAddress($email_address)
     {
-
         if (is_null($email_address)) {
             throw new \InvalidArgumentException('non-nullable email_address cannot be null');
         }
-
         $this->container['email_address'] = $email_address;
 
         return $this;
@@ -1249,11 +1199,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setPhoneNumber($phone_number)
     {
-
         if (is_null($phone_number)) {
             throw new \InvalidArgumentException('non-nullable phone_number cannot be null');
         }
-
         $this->container['phone_number'] = $phone_number;
 
         return $this;
@@ -1278,11 +1226,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setIsArchived($is_archived)
     {
-
         if (is_null($is_archived)) {
             throw new \InvalidArgumentException('non-nullable is_archived cannot be null');
         }
-
         $this->container['is_archived'] = $is_archived;
 
         return $this;
@@ -1307,11 +1253,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setLastChanged($last_changed)
     {
-
         if (is_null($last_changed)) {
             throw new \InvalidArgumentException('non-nullable last_changed cannot be null');
         }
-
         $this->container['last_changed'] = $last_changed;
 
         return $this;
@@ -1336,11 +1280,9 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setContactGroups($contact_groups)
     {
-
         if (is_null($contact_groups)) {
             throw new \InvalidArgumentException('non-nullable contact_groups cannot be null');
         }
-
         $this->container['contact_groups'] = $contact_groups;
 
         return $this;

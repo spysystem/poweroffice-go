@@ -328,11 +328,9 @@ class GetCustomerResponseAllOf implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setData($data)
     {
-
         if (is_null($data)) {
             throw new \InvalidArgumentException('non-nullable data cannot be null');
         }
-
         $this->container['data'] = $data;
 
         return $this;

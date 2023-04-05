@@ -338,11 +338,9 @@ class BaseResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSuccess($success)
     {
-
         if (is_null($success)) {
             throw new \InvalidArgumentException('non-nullable success cannot be null');
         }
-
         $this->container['success'] = $success;
 
         return $this;
@@ -367,11 +365,9 @@ class BaseResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setValidation($validation)
     {
-
         if (is_null($validation)) {
             throw new \InvalidArgumentException('non-nullable validation cannot be null');
         }
-
         $this->container['validation'] = $validation;
 
         return $this;

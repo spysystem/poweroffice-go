@@ -92,6 +92,7 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**searchCustomers**](docs/Api/ContactsApi.md#searchcustomers) | **GET** /Customer | Search Customers
 *ContactsApi* | [**searchSuppliers**](docs/Api/ContactsApi.md#searchsuppliers) | **GET** /Supplier | Search Suppliers
 *LedgerApi* | [**getCustomerLedger**](docs/Api/LedgerApi.md#getcustomerledger) | **GET** /Reporting/CustomerLedger/{matchId} | Get Customer Ledgers
+*LedgerApi* | [**searchAccountTransactions**](docs/Api/LedgerApi.md#searchaccounttransactions) | **GET** /Reporting/AccountTransactions | Search Account Transactions
 *LedgerApi* | [**searchCustomerLedger**](docs/Api/LedgerApi.md#searchcustomerledger) | **GET** /Reporting/CustomerLedger | Search CustomerLedgers
 *LedgerApi* | [**searchGeneralLedgerAccount**](docs/Api/LedgerApi.md#searchgeneralledgeraccount) | **GET** /GeneralLedgerAccount | Search GeneralLedgerAccount
 *LedgerApi* | [**searchVatCode**](docs/Api/LedgerApi.md#searchvatcode) | **GET** /VatCode | Search Vat Code
@@ -110,6 +111,7 @@ Class | Method | HTTP request | Description
 
 ## Models
 
+- [AccountingTransaction](docs/Model/AccountingTransaction.md)
 - [AuthenticationResponse](docs/Model/AuthenticationResponse.md)
 - [BankJournalVoucher](docs/Model/BankJournalVoucher.md)
 - [BankJournalVoucherLine](docs/Model/BankJournalVoucherLine.md)
@@ -147,6 +149,8 @@ Class | Method | HTTP request | Description
 - [ManualJournalVoucherLine](docs/Model/ManualJournalVoucherLine.md)
 - [OutgoingInvoiceVoucher](docs/Model/OutgoingInvoiceVoucher.md)
 - [OutgoingInvoiceVoucherLine](docs/Model/OutgoingInvoiceVoucherLine.md)
+- [SearchAccountingTransactionsEntryResponse](docs/Model/SearchAccountingTransactionsEntryResponse.md)
+- [SearchAccountingTransactionsEntryResponseAllOf](docs/Model/SearchAccountingTransactionsEntryResponseAllOf.md)
 - [SearchBankJournalVoucherResponse](docs/Model/SearchBankJournalVoucherResponse.md)
 - [SearchBankJournalVoucherResponseAllOf](docs/Model/SearchBankJournalVoucherResponseAllOf.md)
 - [SearchContactGroupResponse](docs/Model/SearchContactGroupResponse.md)

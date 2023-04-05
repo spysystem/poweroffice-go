@@ -342,11 +342,9 @@ class Validation implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setErrorLogReference($error_log_reference)
     {
-
         if (is_null($error_log_reference)) {
             throw new \InvalidArgumentException('non-nullable error_log_reference cannot be null');
         }
-
         $this->container['error_log_reference'] = $error_log_reference;
 
         return $this;
@@ -371,11 +369,9 @@ class Validation implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSummary($summary)
     {
-
         if (is_null($summary)) {
             throw new \InvalidArgumentException('non-nullable summary cannot be null');
         }
-
         $this->container['summary'] = $summary;
 
         return $this;
@@ -400,11 +396,9 @@ class Validation implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setException($exception)
     {
-
         if (is_null($exception)) {
             throw new \InvalidArgumentException('non-nullable exception cannot be null');
         }
-
         $this->container['exception'] = $exception;
 
         return $this;

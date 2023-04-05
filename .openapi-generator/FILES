@@ -5,6 +5,7 @@ docs/Api/CompanyApi.md
 docs/Api/ContactsApi.md
 docs/Api/LedgerApi.md
 docs/Api/VoucherApi.md
+docs/Model/AccountingTransaction.md
 docs/Model/AuthenticationResponse.md
 docs/Model/BankJournalVoucher.md
 docs/Model/BankJournalVoucherLine.md
@@ -42,6 +43,8 @@ docs/Model/ManualJournalVoucher.md
 docs/Model/ManualJournalVoucherLine.md
 docs/Model/OutgoingInvoiceVoucher.md
 docs/Model/OutgoingInvoiceVoucherLine.md
+docs/Model/SearchAccountingTransactionsEntryResponse.md
+docs/Model/SearchAccountingTransactionsEntryResponseAllOf.md
 docs/Model/SearchBankJournalVoucherResponse.md
 docs/Model/SearchBankJournalVoucherResponseAllOf.md
 docs/Model/SearchContactGroupResponse.md
@@ -73,6 +76,9 @@ lib/Api/VoucherApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
+lib/Model/AccountingTransaction.php
+lib/Model/AccountingTransactionModelAttributes.php
+lib/Model/AccountingTransactionModelFields.php
 lib/Model/AuthenticationResponse.php
 lib/Model/AuthenticationResponseModelAttributes.php
 lib/Model/AuthenticationResponseModelFields.php
@@ -185,6 +191,12 @@ lib/Model/OutgoingInvoiceVoucherLineModelAttributes.php
 lib/Model/OutgoingInvoiceVoucherLineModelFields.php
 lib/Model/OutgoingInvoiceVoucherModelAttributes.php
 lib/Model/OutgoingInvoiceVoucherModelFields.php
+lib/Model/SearchAccountingTransactionsEntryResponse.php
+lib/Model/SearchAccountingTransactionsEntryResponseAllOf.php
+lib/Model/SearchAccountingTransactionsEntryResponseAllOfModelAttributes.php
+lib/Model/SearchAccountingTransactionsEntryResponseAllOfModelFields.php
+lib/Model/SearchAccountingTransactionsEntryResponseModelAttributes.php
+lib/Model/SearchAccountingTransactionsEntryResponseModelFields.php
 lib/Model/SearchBankJournalVoucherResponse.php
 lib/Model/SearchBankJournalVoucherResponseAllOf.php
 lib/Model/SearchBankJournalVoucherResponseAllOfModelAttributes.php
@@ -260,6 +272,7 @@ test/Api/CompanyApiTest.php
 test/Api/ContactsApiTest.php
 test/Api/LedgerApiTest.php
 test/Api/VoucherApiTest.php
+test/Model/AccountingTransactionTest.php
 test/Model/AuthenticationResponseTest.php
 test/Model/BankJournalVoucherLineTest.php
 test/Model/BankJournalVoucherTest.php
@@ -297,6 +310,8 @@ test/Model/ManualJournalVoucherLineTest.php
 test/Model/ManualJournalVoucherTest.php
 test/Model/OutgoingInvoiceVoucherLineTest.php
 test/Model/OutgoingInvoiceVoucherTest.php
+test/Model/SearchAccountingTransactionsEntryResponseAllOfTest.php
+test/Model/SearchAccountingTransactionsEntryResponseTest.php
 test/Model/SearchBankJournalVoucherResponseAllOfTest.php
 test/Model/SearchBankJournalVoucherResponseTest.php
 test/Model/SearchContactGroupResponseAllOfTest.php

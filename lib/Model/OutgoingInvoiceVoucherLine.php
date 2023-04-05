@@ -356,11 +356,9 @@ class OutgoingInvoiceVoucherLine implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setId($id)
     {
-
         if (is_null($id)) {
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-
         $this->container['id'] = $id;
 
         return $this;
@@ -385,11 +383,9 @@ class OutgoingInvoiceVoucherLine implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setAccountCode($account_code)
     {
-
         if (is_null($account_code)) {
             throw new \InvalidArgumentException('non-nullable account_code cannot be null');
         }
-
         $this->container['account_code'] = $account_code;
 
         return $this;
@@ -414,11 +410,9 @@ class OutgoingInvoiceVoucherLine implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setAmount($amount)
     {
-
         if (is_null($amount)) {
             throw new \InvalidArgumentException('non-nullable amount cannot be null');
         }
-
         $this->container['amount'] = $amount;
 
         return $this;
@@ -443,11 +437,9 @@ class OutgoingInvoiceVoucherLine implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setDescription($description)
     {
-
         if (is_null($description)) {
             throw new \InvalidArgumentException('non-nullable description cannot be null');
         }
-
         $this->container['description'] = $description;
 
         return $this;
@@ -472,11 +464,9 @@ class OutgoingInvoiceVoucherLine implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setVatCode($vat_code)
     {
-
         if (is_null($vat_code)) {
             throw new \InvalidArgumentException('non-nullable vat_code cannot be null');
         }
-
         $this->container['vat_code'] = $vat_code;
 
         return $this;

@@ -447,11 +447,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setId($id)
     {
-
         if (is_null($id)) {
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-
         $this->container['id'] = $id;
 
         return $this;
@@ -476,11 +474,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setPostingDate($posting_date)
     {
-
         if (is_null($posting_date)) {
             throw new \InvalidArgumentException('non-nullable posting_date cannot be null');
         }
-
         $this->container['posting_date'] = $posting_date;
 
         return $this;
@@ -505,11 +501,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setDueDate($due_date)
     {
-
         if (is_null($due_date)) {
             throw new \InvalidArgumentException('non-nullable due_date cannot be null');
         }
-
         $this->container['due_date'] = $due_date;
 
         return $this;
@@ -534,11 +528,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setVoucherNo($voucher_no)
     {
-
         if (is_null($voucher_no)) {
             throw new \InvalidArgumentException('non-nullable voucher_no cannot be null');
         }
-
         $this->container['voucher_no'] = $voucher_no;
 
         return $this;
@@ -563,11 +555,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setCurrencyCode($currency_code)
     {
-
         if (is_null($currency_code)) {
             throw new \InvalidArgumentException('non-nullable currency_code cannot be null');
         }
-
         $this->container['currency_code'] = $currency_code;
 
         return $this;
@@ -592,11 +582,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setCurrencyAmount($currency_amount)
     {
-
         if (is_null($currency_amount)) {
             throw new \InvalidArgumentException('non-nullable currency_amount cannot be null');
         }
-
         $this->container['currency_amount'] = $currency_amount;
 
         return $this;
@@ -621,11 +609,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setAmount($amount)
     {
-
         if (is_null($amount)) {
             throw new \InvalidArgumentException('non-nullable amount cannot be null');
         }
-
         $this->container['amount'] = $amount;
 
         return $this;
@@ -650,11 +636,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setBalance($balance)
     {
-
         if (is_null($balance)) {
             throw new \InvalidArgumentException('non-nullable balance cannot be null');
         }
-
         $this->container['balance'] = $balance;
 
         return $this;
@@ -679,11 +663,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setVoucherId($voucher_id)
     {
-
         if (is_null($voucher_id)) {
             throw new \InvalidArgumentException('non-nullable voucher_id cannot be null');
         }
-
         $this->container['voucher_id'] = $voucher_id;
 
         return $this;
@@ -708,11 +690,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setVoucherDate($voucher_date)
     {
-
         if (is_null($voucher_date)) {
             throw new \InvalidArgumentException('non-nullable voucher_date cannot be null');
         }
-
         $this->container['voucher_date'] = $voucher_date;
 
         return $this;
@@ -737,11 +717,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setVoucherType($voucher_type)
     {
-
         if (is_null($voucher_type)) {
             throw new \InvalidArgumentException('non-nullable voucher_type cannot be null');
         }
-
         $this->container['voucher_type'] = $voucher_type;
 
         return $this;
@@ -766,11 +744,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setMatchId($match_id)
     {
-
         if (is_null($match_id)) {
             throw new \InvalidArgumentException('non-nullable match_id cannot be null');
         }
-
         $this->container['match_id'] = $match_id;
 
         return $this;
@@ -795,11 +771,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setLastChanged($last_changed)
     {
-
         if (is_null($last_changed)) {
             throw new \InvalidArgumentException('non-nullable last_changed cannot be null');
         }
-
         $this->container['last_changed'] = $last_changed;
 
         return $this;
@@ -824,11 +798,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setCreatedDate($created_date)
     {
-
         if (is_null($created_date)) {
             throw new \InvalidArgumentException('non-nullable created_date cannot be null');
         }
-
         $this->container['created_date'] = $created_date;
 
         return $this;
@@ -853,11 +825,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setCustomer($customer)
     {
-
         if (is_null($customer)) {
             throw new \InvalidArgumentException('non-nullable customer cannot be null');
         }
-
         $this->container['customer'] = $customer;
 
         return $this;
@@ -882,11 +852,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setCustomMatchingReference($custom_matching_reference)
     {
-
         if (is_null($custom_matching_reference)) {
             throw new \InvalidArgumentException('non-nullable custom_matching_reference cannot be null');
         }
-
         $this->container['custom_matching_reference'] = $custom_matching_reference;
 
         return $this;
@@ -911,11 +879,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setExternalImportReference($external_import_reference)
     {
-
         if (is_null($external_import_reference)) {
             throw new \InvalidArgumentException('non-nullable external_import_reference cannot be null');
         }
-
         $this->container['external_import_reference'] = $external_import_reference;
 
         return $this;
@@ -940,11 +906,9 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setDocumentNo($document_no)
     {
-
         if (is_null($document_no)) {
             throw new \InvalidArgumentException('non-nullable document_no cannot be null');
         }
-
         $this->container['document_no'] = $document_no;
 
         return $this;

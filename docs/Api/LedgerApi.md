@@ -5,6 +5,7 @@ All URIs are relative to https://api-demo.poweroffice.net, except if the operati
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**getCustomerLedger()**](LedgerApi.md#getCustomerLedger) | **GET** /Reporting/CustomerLedger/{matchId} | Get Customer Ledgers |
+| [**searchAccountTransactions()**](LedgerApi.md#searchAccountTransactions) | **GET** /Reporting/AccountTransactions | Search Account Transactions |
 | [**searchCustomerLedger()**](LedgerApi.md#searchCustomerLedger) | **GET** /Reporting/CustomerLedger | Search CustomerLedgers |
 | [**searchGeneralLedgerAccount()**](LedgerApi.md#searchGeneralLedgerAccount) | **GET** /GeneralLedgerAccount | Search GeneralLedgerAccount |
 | [**searchVatCode()**](LedgerApi.md#searchVatCode) | **GET** /VatCode | Search Vat Code |
@@ -56,6 +57,68 @@ try {
 ### Return type
 
 [**\PowerOfficeGo\Model\GetCustomerLedgerEntryResponse**](../Model/GetCustomerLedgerEntryResponse.md)
+
+### Authorization
+
+[oAuth](../../README.md#oAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `searchAccountTransactions()`
+
+```php
+searchAccountTransactions($from_date, $to_date, $filter): \PowerOfficeGo\Model\SearchAccountingTransactionsEntryResponse
+```
+
+Search Account Transactions
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oAuth
+$config = PowerOfficeGo\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new PowerOfficeGo\Api\LedgerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$from_date = 'from_date_example'; // string
+$to_date = 'to_date_example'; // string
+$filter = 'filter_example'; // string
+
+try {
+    $result = $apiInstance->searchAccountTransactions($from_date, $to_date, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LedgerApi->searchAccountTransactions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **from_date** | **string**|  | |
+| **to_date** | **string**|  | |
+| **filter** | **string**|  | [optional] |
+
+### Return type
+
+[**\PowerOfficeGo\Model\SearchAccountingTransactionsEntryResponse**](../Model/SearchAccountingTransactionsEntryResponse.md)
 
 ### Authorization
 
