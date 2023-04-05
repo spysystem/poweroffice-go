@@ -494,6 +494,32 @@ paths:
         401:
           $ref: '#/responses/Unauthorized'
 
+  /Reporting/AccountTransactions:
+    get:
+      summary: Search Account Transactions
+      operationId: SearchAccountTransactions
+      tags:
+        - Ledger
+      parameters:
+        - name: fromDate
+          in: query
+          required: true
+          type: string
+        - name: toDate
+          in: query
+          required: true
+          type: string
+        - name: $filter
+          in: query
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchAccountingTransactionsEntryResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
   /Reporting/CustomerLedger:
     get:
       summary: Search CustomerLedgers
@@ -1274,6 +1300,118 @@ definitions:
         properties:
           data:
             $ref: '#/definitions/CustomerLedgerEntry'
+#endregion
+
+#region AccountingTransaction
+  AccountingTransaction:
+    type: object
+    properties:
+      id:
+        type: integer
+      accountCode:
+        type: integer
+      amount:
+        type: number
+      bankTransferId:
+        type: string
+      correctionOfVoucherNo:
+        type: integer
+      createdDate:
+        type: string
+      createdFromImportJournalId:
+        type: string
+      currencyAmount:
+        type: number
+      currencyCode:
+        type: string
+      customerAccountNo:
+        type: integer
+      customMatchingReference:
+        type: string
+      date:
+        type: string
+      departmentCode:
+        type: string
+      description:
+        type: string
+      dim1Code:
+        type: string
+      dim2Code:
+        type: string
+      dim3Code:
+        type: string
+      documentNo:
+        type: string
+      employeeAccountNo:
+        type: integer
+      externalImportReference:
+        type: string
+      hasVoucherDocumentation:
+        type: string
+      importedVoucherNo:
+        type: integer
+      isCreatedFromEhf:
+        type: boolean
+      isNoteMainEntry:
+        type: boolean
+      isReversed:
+        type: boolean
+      lastChanged:
+        type: string
+      locationCode:
+        type: string
+      ourReferenceEmployeeCode:
+        type: integer
+      productCode:
+        type: string
+      projectCode:
+        type: string
+      quantity:
+        type: integer
+      reversedVoucherNo:
+        type: integer
+      subLedgerEntryId:
+        type: integer
+      supplierAccountNo:
+        type: integer
+      text:
+        type: string
+      vatAmount:
+        type: number
+      vatCode:
+        type: string
+      vatRate:
+        type: number
+      vatReturnSpecification:
+        type: number
+      voucherCID:
+        type: string
+      voucherCreditNoteReference:
+        type: string
+      voucherDate:
+        type: string
+      voucherDueDate:
+        type: string
+      voucherId:
+        type: string
+      voucherImagesCount:
+        type: integer
+      voucherNo:
+        type: integer
+      voucherReference:
+        type: integer
+      voucherType:
+        type: integer
+
+  SearchAccountingTransactionsEntryResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/definitions/AccountingTransaction'
 #endregion
 
 #region GeneralLedgerAccount
