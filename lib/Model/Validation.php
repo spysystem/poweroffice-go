@@ -79,7 +79,8 @@ class Validation implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'error_log_reference' => 'string',
         'summary' => 'string',
-        'exception' => 'string'
+        'exception' => 'string',
+        'fields' => 'object'
     ];
 
     /**
@@ -92,7 +93,8 @@ class Validation implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'error_log_reference' => null,
         'summary' => null,
-        'exception' => null
+        'exception' => null,
+        'fields' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class Validation implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'error_log_reference' => false,
 		'summary' => false,
-		'exception' => false
+		'exception' => false,
+		'fields' => false
     ];
 
     /**
@@ -194,7 +197,8 @@ class Validation implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'error_log_reference' => 'errorLogReference',
         'summary' => 'summary',
-        'exception' => 'exception'
+        'exception' => 'exception',
+        'fields' => 'fields'
     ];
 
     /**
@@ -205,7 +209,8 @@ class Validation implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'error_log_reference' => 'setErrorLogReference',
         'summary' => 'setSummary',
-        'exception' => 'setException'
+        'exception' => 'setException',
+        'fields' => 'setFields'
     ];
 
     /**
@@ -216,7 +221,8 @@ class Validation implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'error_log_reference' => 'getErrorLogReference',
         'summary' => 'getSummary',
-        'exception' => 'getException'
+        'exception' => 'getException',
+        'fields' => 'getFields'
     ];
 
     /**
@@ -279,6 +285,7 @@ class Validation implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('error_log_reference', $data ?? [], null);
         $this->setIfExists('summary', $data ?? [], null);
         $this->setIfExists('exception', $data ?? [], null);
+        $this->setIfExists('fields', $data ?? [], null);
     }
 
     /**
@@ -400,6 +407,33 @@ class Validation implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable exception cannot be null');
         }
         $this->container['exception'] = $exception;
+
+        return $this;
+    }
+
+    /**
+     * Gets fields
+     *
+     * @return object|null
+     */
+    public function getFields()
+    {
+        return $this->container['fields'];
+    }
+
+    /**
+     * Sets fields
+     *
+     * @param object|null $fields fields
+     *
+     * @return self
+     */
+    public function setFields($fields)
+    {
+        if (is_null($fields)) {
+            throw new \InvalidArgumentException('non-nullable fields cannot be null');
+        }
+        $this->container['fields'] = $fields;
 
         return $this;
     }

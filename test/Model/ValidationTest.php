@@ -105,4 +105,13 @@ class ValidationTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "fields"
+     */
+    public function testPropertyFields()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

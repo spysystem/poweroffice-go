@@ -490,6 +490,10 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['phone_number']) && (mb_strlen($this->container['phone_number']) > 40)) {
+            $invalidProperties[] = "invalid value for 'phone_number', the character length must be smaller than or equal to 40.";
+        }
+
         return $invalidProperties;
     }
 
@@ -1202,6 +1206,10 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($phone_number)) {
             throw new \InvalidArgumentException('non-nullable phone_number cannot be null');
         }
+        if ((mb_strlen($phone_number) > 40)) {
+            throw new \InvalidArgumentException('invalid length for $phone_number when calling Customer., must be smaller than or equal to 40.');
+        }
+
         $this->container['phone_number'] = $phone_number;
 
         return $this;

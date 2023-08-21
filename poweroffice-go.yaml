@@ -612,6 +612,8 @@ definitions:
         type: string
       exception:
         type: string
+      fields:
+          type: object
 
   BaseResponse:
     required:
@@ -788,6 +790,7 @@ definitions:
         type: string
       phoneNumber:
         type: string
+        maxLength: 40
       isArchived:
         type: boolean
       lastChanged:

@@ -41,5 +41,6 @@ class ValidationModelAttributes
     public string $strErrorLogReference = 'error_log_reference';
     public string $strSummary = 'summary';
     public string $strException = 'exception';
+    public string $strFields = 'fields';
 }
 
