@@ -384,11 +384,9 @@ class BankJournalVoucherLine implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setId($id)
     {
-
         if (is_null($id)) {
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-
         $this->container['id'] = $id;
 
         return $this;
@@ -413,11 +411,9 @@ class BankJournalVoucherLine implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setAccountCode($account_code)
     {
-
         if (is_null($account_code)) {
             throw new \InvalidArgumentException('non-nullable account_code cannot be null');
         }
-
         $this->container['account_code'] = $account_code;
 
         return $this;
@@ -442,11 +438,9 @@ class BankJournalVoucherLine implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setAmount($amount)
     {
-
         if (is_null($amount)) {
             throw new \InvalidArgumentException('non-nullable amount cannot be null');
         }
-
         $this->container['amount'] = $amount;
 
         return $this;
@@ -471,11 +465,9 @@ class BankJournalVoucherLine implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setCurrencyCode($currency_code)
     {
-
         if (is_null($currency_code)) {
             throw new \InvalidArgumentException('non-nullable currency_code cannot be null');
         }
-
         $this->container['currency_code'] = $currency_code;
 
         return $this;
@@ -500,11 +492,9 @@ class BankJournalVoucherLine implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setCurrencyRate($currency_rate)
     {
-
         if (is_null($currency_rate)) {
             throw new \InvalidArgumentException('non-nullable currency_rate cannot be null');
         }
-
         $this->container['currency_rate'] = $currency_rate;
 
         return $this;
@@ -529,11 +519,9 @@ class BankJournalVoucherLine implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setDate($date)
     {
-
         if (is_null($date)) {
             throw new \InvalidArgumentException('non-nullable date cannot be null');
         }
-
         $this->container['date'] = $date;
 
         return $this;
@@ -558,11 +546,9 @@ class BankJournalVoucherLine implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setDescription($description)
     {
-
         if (is_null($description)) {
             throw new \InvalidArgumentException('non-nullable description cannot be null');
         }
-
         $this->container['description'] = $description;
 
         return $this;
@@ -587,11 +573,9 @@ class BankJournalVoucherLine implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setInvoiceNo($invoice_no)
     {
-
         if (is_null($invoice_no)) {
             throw new \InvalidArgumentException('non-nullable invoice_no cannot be null');
         }
-
         $this->container['invoice_no'] = $invoice_no;
 
         return $this;
@@ -616,11 +600,9 @@ class BankJournalVoucherLine implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setVatCode($vat_code)
     {
-
         if (is_null($vat_code)) {
             throw new \InvalidArgumentException('non-nullable vat_code cannot be null');
         }
-
         $this->container['vat_code'] = $vat_code;
 
         return $this;

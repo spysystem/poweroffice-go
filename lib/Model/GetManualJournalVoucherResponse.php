@@ -345,11 +345,9 @@ class GetManualJournalVoucherResponse implements ModelInterface, ArrayAccess, \J
      */
     public function setSuccess($success)
     {
-
         if (is_null($success)) {
             throw new \InvalidArgumentException('non-nullable success cannot be null');
         }
-
         $this->container['success'] = $success;
 
         return $this;
@@ -374,11 +372,9 @@ class GetManualJournalVoucherResponse implements ModelInterface, ArrayAccess, \J
      */
     public function setValidation($validation)
     {
-
         if (is_null($validation)) {
             throw new \InvalidArgumentException('non-nullable validation cannot be null');
         }
-
         $this->container['validation'] = $validation;
 
         return $this;
@@ -403,11 +399,9 @@ class GetManualJournalVoucherResponse implements ModelInterface, ArrayAccess, \J
      */
     public function setData($data)
     {
-
         if (is_null($data)) {
             throw new \InvalidArgumentException('non-nullable data cannot be null');
         }
-
         $this->container['data'] = $data;
 
         return $this;

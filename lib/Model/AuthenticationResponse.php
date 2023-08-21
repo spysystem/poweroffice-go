@@ -349,11 +349,9 @@ class AuthenticationResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setAccessToken($access_token)
     {
-
         if (is_null($access_token)) {
             throw new \InvalidArgumentException('non-nullable access_token cannot be null');
         }
-
         $this->container['access_token'] = $access_token;
 
         return $this;
@@ -378,11 +376,9 @@ class AuthenticationResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setTokenType($token_type)
     {
-
         if (is_null($token_type)) {
             throw new \InvalidArgumentException('non-nullable token_type cannot be null');
         }
-
         $this->container['token_type'] = $token_type;
 
         return $this;
@@ -407,11 +403,9 @@ class AuthenticationResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setExpiresIn($expires_in)
     {
-
         if (is_null($expires_in)) {
             throw new \InvalidArgumentException('non-nullable expires_in cannot be null');
         }
-
         $this->container['expires_in'] = $expires_in;
 
         return $this;
@@ -436,11 +430,9 @@ class AuthenticationResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setRefreshToken($refresh_token)
     {
-
         if (is_null($refresh_token)) {
             throw new \InvalidArgumentException('non-nullable refresh_token cannot be null');
         }
-
         $this->container['refresh_token'] = $refresh_token;
 
         return $this;

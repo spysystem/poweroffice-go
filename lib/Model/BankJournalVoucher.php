@@ -391,11 +391,9 @@ class BankJournalVoucher implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function setId($id)
     {
-
         if (is_null($id)) {
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-
         $this->container['id'] = $id;
 
         return $this;
@@ -420,11 +418,9 @@ class BankJournalVoucher implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function setCreatedDate($created_date)
     {
-
         if (is_null($created_date)) {
             throw new \InvalidArgumentException('non-nullable created_date cannot be null');
         }
-
         $this->container['created_date'] = $created_date;
 
         return $this;
@@ -449,11 +445,9 @@ class BankJournalVoucher implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function setCurrencyCode($currency_code)
     {
-
         if (is_null($currency_code)) {
             throw new \InvalidArgumentException('non-nullable currency_code cannot be null');
         }
-
         $this->container['currency_code'] = $currency_code;
 
         return $this;
@@ -478,11 +472,9 @@ class BankJournalVoucher implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function setDescription($description)
     {
-
         if (is_null($description)) {
             throw new \InvalidArgumentException('non-nullable description cannot be null');
         }
-
         $this->container['description'] = $description;
 
         return $this;
@@ -507,11 +499,9 @@ class BankJournalVoucher implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function setExternalImportReference($external_import_reference)
     {
-
         if (is_null($external_import_reference)) {
             throw new \InvalidArgumentException('non-nullable external_import_reference cannot be null');
         }
-
         $this->container['external_import_reference'] = $external_import_reference;
 
         return $this;
@@ -536,11 +526,9 @@ class BankJournalVoucher implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function setImportedVoucherNo($imported_voucher_no)
     {
-
         if (is_null($imported_voucher_no)) {
             throw new \InvalidArgumentException('non-nullable imported_voucher_no cannot be null');
         }
-
         $this->container['imported_voucher_no'] = $imported_voucher_no;
 
         return $this;
@@ -565,11 +553,9 @@ class BankJournalVoucher implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function setIsReversed($is_reversed)
     {
-
         if (is_null($is_reversed)) {
             throw new \InvalidArgumentException('non-nullable is_reversed cannot be null');
         }
-
         $this->container['is_reversed'] = $is_reversed;
 
         return $this;
@@ -594,11 +580,9 @@ class BankJournalVoucher implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function setLines($lines)
     {
-
         if (is_null($lines)) {
             throw new \InvalidArgumentException('non-nullable lines cannot be null');
         }
-
         $this->container['lines'] = $lines;
 
         return $this;
@@ -623,11 +607,9 @@ class BankJournalVoucher implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function setVoucherDate($voucher_date)
     {
-
         if (is_null($voucher_date)) {
             throw new \InvalidArgumentException('non-nullable voucher_date cannot be null');
         }
-
         $this->container['voucher_date'] = $voucher_date;
 
         return $this;
@@ -652,11 +634,9 @@ class BankJournalVoucher implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function setVoucherNo($voucher_no)
     {
-
         if (is_null($voucher_no)) {
             throw new \InvalidArgumentException('non-nullable voucher_no cannot be null');
         }
-
         $this->container['voucher_no'] = $voucher_no;
 
         return $this;

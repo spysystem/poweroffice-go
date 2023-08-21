@@ -356,11 +356,9 @@ class CustomerBalance implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setCustomerId($customer_id)
     {
-
         if (is_null($customer_id)) {
             throw new \InvalidArgumentException('non-nullable customer_id cannot be null');
         }
-
         $this->container['customer_id'] = $customer_id;
 
         return $this;
@@ -385,11 +383,9 @@ class CustomerBalance implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setCustomerName($customer_name)
     {
-
         if (is_null($customer_name)) {
             throw new \InvalidArgumentException('non-nullable customer_name cannot be null');
         }
-
         $this->container['customer_name'] = $customer_name;
 
         return $this;
@@ -414,11 +410,9 @@ class CustomerBalance implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setCustomerCode($customer_code)
     {
-
         if (is_null($customer_code)) {
             throw new \InvalidArgumentException('non-nullable customer_code cannot be null');
         }
-
         $this->container['customer_code'] = $customer_code;
 
         return $this;
@@ -443,11 +437,9 @@ class CustomerBalance implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setCustomerExternalCode($customer_external_code)
     {
-
         if (is_null($customer_external_code)) {
             throw new \InvalidArgumentException('non-nullable customer_external_code cannot be null');
         }
-
         $this->container['customer_external_code'] = $customer_external_code;
 
         return $this;
@@ -472,11 +464,9 @@ class CustomerBalance implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBalance($balance)
     {
-
         if (is_null($balance)) {
             throw new \InvalidArgumentException('non-nullable balance cannot be null');
         }
-
         $this->container['balance'] = $balance;
 
         return $this;

@@ -447,11 +447,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setId($id)
     {
-
         if (is_null($id)) {
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-
         $this->container['id'] = $id;
 
         return $this;
@@ -476,11 +474,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setCid($cid)
     {
-
         if (is_null($cid)) {
             throw new \InvalidArgumentException('non-nullable cid cannot be null');
         }
-
         $this->container['cid'] = $cid;
 
         return $this;
@@ -505,11 +501,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setCreatedDate($created_date)
     {
-
         if (is_null($created_date)) {
             throw new \InvalidArgumentException('non-nullable created_date cannot be null');
         }
-
         $this->container['created_date'] = $created_date;
 
         return $this;
@@ -534,11 +528,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setCurrencyCode($currency_code)
     {
-
         if (is_null($currency_code)) {
             throw new \InvalidArgumentException('non-nullable currency_code cannot be null');
         }
-
         $this->container['currency_code'] = $currency_code;
 
         return $this;
@@ -563,11 +555,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setCurrencyRate($currency_rate)
     {
-
         if (is_null($currency_rate)) {
             throw new \InvalidArgumentException('non-nullable currency_rate cannot be null');
         }
-
         $this->container['currency_rate'] = $currency_rate;
 
         return $this;
@@ -592,11 +582,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setCustomerCode($customer_code)
     {
-
         if (is_null($customer_code)) {
             throw new \InvalidArgumentException('non-nullable customer_code cannot be null');
         }
-
         $this->container['customer_code'] = $customer_code;
 
         return $this;
@@ -621,11 +609,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setCustomMatchingReference($custom_matching_reference)
     {
-
         if (is_null($custom_matching_reference)) {
             throw new \InvalidArgumentException('non-nullable custom_matching_reference cannot be null');
         }
-
         $this->container['custom_matching_reference'] = $custom_matching_reference;
 
         return $this;
@@ -650,11 +636,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setDeliveryDate($delivery_date)
     {
-
         if (is_null($delivery_date)) {
             throw new \InvalidArgumentException('non-nullable delivery_date cannot be null');
         }
-
         $this->container['delivery_date'] = $delivery_date;
 
         return $this;
@@ -679,11 +663,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setDeliveryTerm($delivery_term)
     {
-
         if (is_null($delivery_term)) {
             throw new \InvalidArgumentException('non-nullable delivery_term cannot be null');
         }
-
         $this->container['delivery_term'] = $delivery_term;
 
         return $this;
@@ -708,11 +690,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setDueDate($due_date)
     {
-
         if (is_null($due_date)) {
             throw new \InvalidArgumentException('non-nullable due_date cannot be null');
         }
-
         $this->container['due_date'] = $due_date;
 
         return $this;
@@ -737,11 +717,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setExternalImportReference($external_import_reference)
     {
-
         if (is_null($external_import_reference)) {
             throw new \InvalidArgumentException('non-nullable external_import_reference cannot be null');
         }
-
         $this->container['external_import_reference'] = $external_import_reference;
 
         return $this;
@@ -766,11 +744,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setImportedVoucherNo($imported_voucher_no)
     {
-
         if (is_null($imported_voucher_no)) {
             throw new \InvalidArgumentException('non-nullable imported_voucher_no cannot be null');
         }
-
         $this->container['imported_voucher_no'] = $imported_voucher_no;
 
         return $this;
@@ -795,11 +771,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setInvoiceNo($invoice_no)
     {
-
         if (is_null($invoice_no)) {
             throw new \InvalidArgumentException('non-nullable invoice_no cannot be null');
         }
-
         $this->container['invoice_no'] = $invoice_no;
 
         return $this;
@@ -824,11 +798,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setDescription($description)
     {
-
         if (is_null($description)) {
             throw new \InvalidArgumentException('non-nullable description cannot be null');
         }
-
         $this->container['description'] = $description;
 
         return $this;
@@ -853,11 +825,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setIsReversed($is_reversed)
     {
-
         if (is_null($is_reversed)) {
             throw new \InvalidArgumentException('non-nullable is_reversed cannot be null');
         }
-
         $this->container['is_reversed'] = $is_reversed;
 
         return $this;
@@ -882,11 +852,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setLines($lines)
     {
-
         if (is_null($lines)) {
             throw new \InvalidArgumentException('non-nullable lines cannot be null');
         }
-
         $this->container['lines'] = $lines;
 
         return $this;
@@ -911,11 +879,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setVoucherDate($voucher_date)
     {
-
         if (is_null($voucher_date)) {
             throw new \InvalidArgumentException('non-nullable voucher_date cannot be null');
         }
-
         $this->container['voucher_date'] = $voucher_date;
 
         return $this;
@@ -940,11 +906,9 @@ class OutgoingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setVoucherNo($voucher_no)
     {
-
         if (is_null($voucher_no)) {
             throw new \InvalidArgumentException('non-nullable voucher_no cannot be null');
         }
-
         $this->container['voucher_no'] = $voucher_no;
 
         return $this;

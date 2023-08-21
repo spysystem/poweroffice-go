@@ -342,11 +342,9 @@ class ContactGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setId($id)
     {
-
         if (is_null($id)) {
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-
         $this->container['id'] = $id;
 
         return $this;
@@ -371,11 +369,9 @@ class ContactGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTitle($title)
     {
-
         if (is_null($title)) {
             throw new \InvalidArgumentException('non-nullable title cannot be null');
         }
-
         $this->container['title'] = $title;
 
         return $this;
@@ -400,11 +396,9 @@ class ContactGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSendInvoicesToGroup($send_invoices_to_group)
     {
-
         if (is_null($send_invoices_to_group)) {
             throw new \InvalidArgumentException('non-nullable send_invoices_to_group cannot be null');
         }
-
         $this->container['send_invoices_to_group'] = $send_invoices_to_group;
 
         return $this;
