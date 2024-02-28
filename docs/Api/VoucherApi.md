@@ -8,6 +8,7 @@ All URIs are relative to https://api-demo.poweroffice.net, except if the operati
 | [**createOrUpdateIncomingInvoiceVoucher()**](VoucherApi.md#createOrUpdateIncomingInvoiceVoucher) | **POST** /Voucher/IncomingInvoiceVoucher | Create or Update Incoming Invoice Voucher |
 | [**createOrUpdateManualJournalVoucher()**](VoucherApi.md#createOrUpdateManualJournalVoucher) | **POST** /Voucher/ManualJournalVoucher | Create or Update ManualJournalVoucher |
 | [**createOrUpdateOutgoingInvoiceVoucher()**](VoucherApi.md#createOrUpdateOutgoingInvoiceVoucher) | **POST** /Voucher/OutgoingInvoiceVoucher | Create or Update Outgoing Invoice Voucher |
+| [**createVoucherDocumentation()**](VoucherApi.md#createVoucherDocumentation) | **POST** /Voucher/VoucherDocumentation | Create Voucher Documentation |
 | [**getBankJournalVoucher()**](VoucherApi.md#getBankJournalVoucher) | **GET** /Voucher/BankJournalVoucher/{id} | Get BankJournalVoucher |
 | [**getIncomingInvoiceVoucher()**](VoucherApi.md#getIncomingInvoiceVoucher) | **GET** /Voucher/IncomingInvoiceVoucher/{id} | Get Incoming Invoice Voucher |
 | [**getManualJournalVoucher()**](VoucherApi.md#getManualJournalVoucher) | **GET** /Voucher/ManualJournalVoucher/{id} | Get ManualJournalVoucher |
@@ -236,6 +237,64 @@ try {
 ### Return type
 
 [**\PowerOfficeGo\Model\GetOutgoingInvoiceVoucherResponse**](../Model/GetOutgoingInvoiceVoucherResponse.md)
+
+### Authorization
+
+[oAuth](../../README.md#oAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `createVoucherDocumentation()`
+
+```php
+createVoucherDocumentation($data): \PowerOfficeGo\Model\GetVoucherDocumentationResponse
+```
+
+Create Voucher Documentation
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oAuth
+$config = PowerOfficeGo\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new PowerOfficeGo\Api\VoucherApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$data = new \PowerOfficeGo\Model\VoucherDocumentation(); // \PowerOfficeGo\Model\VoucherDocumentation
+
+try {
+    $result = $apiInstance->createVoucherDocumentation($data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling VoucherApi->createVoucherDocumentation: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **data** | [**\PowerOfficeGo\Model\VoucherDocumentation**](../Model/VoucherDocumentation.md)|  | [optional] |
+
+### Return type
+
+[**\PowerOfficeGo\Model\GetVoucherDocumentationResponse**](../Model/GetVoucherDocumentationResponse.md)
 
 ### Authorization
 

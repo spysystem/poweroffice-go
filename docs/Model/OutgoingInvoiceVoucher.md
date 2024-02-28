@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional]
+**id** | **string** |  | [optional]
 **cid** | **string** |  | [optional]
 **created_date** | **string** |  | [optional]
 **currency_code** | **string** |  | [optional]

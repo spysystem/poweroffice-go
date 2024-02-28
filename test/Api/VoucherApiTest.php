@@ -120,6 +120,18 @@ class VoucherApiTest extends TestCase
     }
 
     /**
+     * Test case for createVoucherDocumentation
+     *
+     * Create Voucher Documentation.
+     *
+     */
+    public function testCreateVoucherDocumentation()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getBankJournalVoucher
      *
      * Get BankJournalVoucher.

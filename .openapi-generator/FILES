@@ -35,6 +35,8 @@ docs/Model/GetOutgoingInvoiceVoucherResponse.md
 docs/Model/GetOutgoingInvoiceVoucherResponseAllOf.md
 docs/Model/GetSupplierResponse.md
 docs/Model/GetSupplierResponseAllOf.md
+docs/Model/GetVoucherDocumentationResponse.md
+docs/Model/GetVoucherDocumentationResponseAllOf.md
 docs/Model/IncomingInvoiceVoucher.md
 docs/Model/IncomingInvoiceVoucherLine.md
 docs/Model/MailAddress.md
@@ -65,6 +67,7 @@ docs/Model/SearchVatCodeResponseAllOf.md
 docs/Model/Supplier.md
 docs/Model/Validation.md
 docs/Model/VatCode.md
+docs/Model/VoucherDocumentation.md
 lib/Api/AuthenticateApi.php
 lib/Api/CompanyApi.php
 lib/Api/ContactsApi.php
@@ -163,6 +166,12 @@ lib/Model/GetSupplierResponseAllOfModelAttributes.php
 lib/Model/GetSupplierResponseAllOfModelFields.php
 lib/Model/GetSupplierResponseModelAttributes.php
 lib/Model/GetSupplierResponseModelFields.php
+lib/Model/GetVoucherDocumentationResponse.php
+lib/Model/GetVoucherDocumentationResponseAllOf.php
+lib/Model/GetVoucherDocumentationResponseAllOfModelAttributes.php
+lib/Model/GetVoucherDocumentationResponseAllOfModelFields.php
+lib/Model/GetVoucherDocumentationResponseModelAttributes.php
+lib/Model/GetVoucherDocumentationResponseModelFields.php
 lib/Model/IncomingInvoiceVoucher.php
 lib/Model/IncomingInvoiceVoucherLine.php
 lib/Model/IncomingInvoiceVoucherLineModelAttributes.php
@@ -254,6 +263,9 @@ lib/Model/ValidationModelFields.php
 lib/Model/VatCode.php
 lib/Model/VatCodeModelAttributes.php
 lib/Model/VatCodeModelFields.php
+lib/Model/VoucherDocumentation.php
+lib/Model/VoucherDocumentationModelAttributes.php
+lib/Model/VoucherDocumentationModelFields.php
 lib/ObjectSerializer.php
 test/Api/AuthenticateApiTest.php
 test/Api/CompanyApiTest.php
@@ -290,6 +302,8 @@ test/Model/GetOutgoingInvoiceVoucherResponseAllOfTest.php
 test/Model/GetOutgoingInvoiceVoucherResponseTest.php
 test/Model/GetSupplierResponseAllOfTest.php
 test/Model/GetSupplierResponseTest.php
+test/Model/GetVoucherDocumentationResponseAllOfTest.php
+test/Model/GetVoucherDocumentationResponseTest.php
 test/Model/IncomingInvoiceVoucherLineTest.php
 test/Model/IncomingInvoiceVoucherTest.php
 test/Model/MailAddressTest.php
@@ -320,3 +334,4 @@ test/Model/SearchVatCodeResponseTest.php
 test/Model/SupplierTest.php
 test/Model/ValidationTest.php
 test/Model/VatCodeTest.php
+test/Model/VoucherDocumentationTest.php

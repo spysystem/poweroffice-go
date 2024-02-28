@@ -99,6 +99,7 @@ Class | Method | HTTP request | Description
 *VoucherApi* | [**createOrUpdateIncomingInvoiceVoucher**](docs/Api/VoucherApi.md#createorupdateincominginvoicevoucher) | **POST** /Voucher/IncomingInvoiceVoucher | Create or Update Incoming Invoice Voucher
 *VoucherApi* | [**createOrUpdateManualJournalVoucher**](docs/Api/VoucherApi.md#createorupdatemanualjournalvoucher) | **POST** /Voucher/ManualJournalVoucher | Create or Update ManualJournalVoucher
 *VoucherApi* | [**createOrUpdateOutgoingInvoiceVoucher**](docs/Api/VoucherApi.md#createorupdateoutgoinginvoicevoucher) | **POST** /Voucher/OutgoingInvoiceVoucher | Create or Update Outgoing Invoice Voucher
+*VoucherApi* | [**createVoucherDocumentation**](docs/Api/VoucherApi.md#createvoucherdocumentation) | **POST** /Voucher/VoucherDocumentation | Create Voucher Documentation
 *VoucherApi* | [**getBankJournalVoucher**](docs/Api/VoucherApi.md#getbankjournalvoucher) | **GET** /Voucher/BankJournalVoucher/{id} | Get BankJournalVoucher
 *VoucherApi* | [**getIncomingInvoiceVoucher**](docs/Api/VoucherApi.md#getincominginvoicevoucher) | **GET** /Voucher/IncomingInvoiceVoucher/{id} | Get Incoming Invoice Voucher
 *VoucherApi* | [**getManualJournalVoucher**](docs/Api/VoucherApi.md#getmanualjournalvoucher) | **GET** /Voucher/ManualJournalVoucher/{id} | Get ManualJournalVoucher
@@ -140,6 +141,8 @@ Class | Method | HTTP request | Description
 - [GetOutgoingInvoiceVoucherResponseAllOf](docs/Model/GetOutgoingInvoiceVoucherResponseAllOf.md)
 - [GetSupplierResponse](docs/Model/GetSupplierResponse.md)
 - [GetSupplierResponseAllOf](docs/Model/GetSupplierResponseAllOf.md)
+- [GetVoucherDocumentationResponse](docs/Model/GetVoucherDocumentationResponse.md)
+- [GetVoucherDocumentationResponseAllOf](docs/Model/GetVoucherDocumentationResponseAllOf.md)
 - [IncomingInvoiceVoucher](docs/Model/IncomingInvoiceVoucher.md)
 - [IncomingInvoiceVoucherLine](docs/Model/IncomingInvoiceVoucherLine.md)
 - [MailAddress](docs/Model/MailAddress.md)
@@ -170,6 +173,7 @@ Class | Method | HTTP request | Description
 - [Supplier](docs/Model/Supplier.md)
 - [Validation](docs/Model/Validation.md)
 - [VatCode](docs/Model/VatCode.md)
+- [VoucherDocumentation](docs/Model/VoucherDocumentation.md)
 
 ## Authorization
 
