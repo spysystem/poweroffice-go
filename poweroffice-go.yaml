@@ -494,6 +494,25 @@ paths:
         401:
           $ref: '#/responses/Unauthorized'
 
+  /Voucher/VoucherDocumentation:
+    post:
+      summary: Create Voucher Documentation
+      operationId: CreateVoucherDocumentation
+      tags:
+        - Voucher
+      parameters:
+        - in: body
+          name: data
+          schema:
+            $ref: '#/definitions/VoucherDocumentation'
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/GetVoucherDocumentationResponse'
+        401:
+          $ref: '#/responses/Unauthorized'
+
   /Reporting/CustomerLedger:
     get:
       summary: Search CustomerLedgers
@@ -958,7 +977,7 @@ definitions:
     type: object
     properties:
       id:
-        type: integer
+        type: string
       cid:
         type: string
       createdDate:
@@ -1218,6 +1237,29 @@ definitions:
               $ref: '#/definitions/BankJournalVoucher'
 #endregion
 
+#region VoucherDocumentation
+  GetVoucherDocumentationResponse:
+    allOf:
+      - $ref: '#/definitions/BaseResponse'
+      - type: object
+        properties:
+          data:
+            $ref: '#/definitions/VoucherDocumentation'
+
+  VoucherDocumentation:
+    type: object
+    properties:
+      Base64EncodedData:
+        type: string
+      FileName:
+        type: string
+      FileType:
+        type: integer
+        enum: [0,1,2,3,4,5,6]
+      VoucherId:
+        type: string
+
+#endregion VoucherDocumentation
 #region CustomerLedger
   CustomerLedgerEntry:
     type: object
