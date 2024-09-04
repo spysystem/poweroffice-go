@@ -1054,7 +1054,7 @@ definitions:
     type: object
     properties:
       id:
-        type: integer
+        type: string
       createdDate:
         type: string
       currencyCode:
