@@ -77,7 +77,7 @@ class IncomingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
+        'id' => 'string',
         'created_date' => 'string',
         'currency_code' => 'string',
         'currency_rate' => 'float',
@@ -396,7 +396,7 @@ class IncomingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets id
      *
-     * @return int|null
+     * @return string|null
      */
     public function getId()
     {
@@ -406,7 +406,7 @@ class IncomingInvoiceVoucher implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets id
      *
-     * @param int|null $id id
+     * @param string|null $id id
      *
      * @return self
      */
