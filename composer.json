@@ -1,6 +1,6 @@
 {
     "name": "spysystem/poweroffice-go",
-    "description": "PowerOffice Go API.",
+    "description": "PowerOffice-Go API",
     "keywords": [
         "openapitools",
         "openapi-generator",
