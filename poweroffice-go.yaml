@@ -1292,6 +1292,8 @@ definitions:
         type: string
       createdDate:
         type: string
+      customerCode:
+        type: integer
       customer:
         $ref: '#/definitions/Customer'
       customMatchingReference:
