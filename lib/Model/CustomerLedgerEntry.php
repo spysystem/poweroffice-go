@@ -87,6 +87,7 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
         'match_id' => 'int',
         'last_changed' => 'string',
         'created_date' => 'string',
+        'customer_code' => 'int',
         'customer' => '\PowerOfficeGo\Model\Customer',
         'custom_matching_reference' => 'string',
         'external_import_reference' => 'string',
@@ -115,6 +116,7 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
         'match_id' => null,
         'last_changed' => null,
         'created_date' => null,
+        'customer_code' => null,
         'customer' => null,
         'custom_matching_reference' => null,
         'external_import_reference' => null,
@@ -141,6 +143,7 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
         'match_id' => false,
         'last_changed' => false,
         'created_date' => false,
+        'customer_code' => false,
         'customer' => false,
         'custom_matching_reference' => false,
         'external_import_reference' => false,
@@ -247,6 +250,7 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
         'match_id' => 'matchId',
         'last_changed' => 'lastChanged',
         'created_date' => 'createdDate',
+        'customer_code' => 'customerCode',
         'customer' => 'customer',
         'custom_matching_reference' => 'customMatchingReference',
         'external_import_reference' => 'externalImportReference',
@@ -273,6 +277,7 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
         'match_id' => 'setMatchId',
         'last_changed' => 'setLastChanged',
         'created_date' => 'setCreatedDate',
+        'customer_code' => 'setCustomerCode',
         'customer' => 'setCustomer',
         'custom_matching_reference' => 'setCustomMatchingReference',
         'external_import_reference' => 'setExternalImportReference',
@@ -299,6 +304,7 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
         'match_id' => 'getMatchId',
         'last_changed' => 'getLastChanged',
         'created_date' => 'getCreatedDate',
+        'customer_code' => 'getCustomerCode',
         'customer' => 'getCustomer',
         'custom_matching_reference' => 'getCustomMatchingReference',
         'external_import_reference' => 'getExternalImportReference',
@@ -376,6 +382,7 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('match_id', $data ?? [], null);
         $this->setIfExists('last_changed', $data ?? [], null);
         $this->setIfExists('created_date', $data ?? [], null);
+        $this->setIfExists('customer_code', $data ?? [], null);
         $this->setIfExists('customer', $data ?? [], null);
         $this->setIfExists('custom_matching_reference', $data ?? [], null);
         $this->setIfExists('external_import_reference', $data ?? [], null);
@@ -798,6 +805,33 @@ class CustomerLedgerEntry implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable created_date cannot be null');
         }
         $this->container['created_date'] = $created_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer_code
+     *
+     * @return int|null
+     */
+    public function getCustomerCode()
+    {
+        return $this->container['customer_code'];
+    }
+
+    /**
+     * Sets customer_code
+     *
+     * @param int|null $customer_code customer_code
+     *
+     * @return self
+     */
+    public function setCustomerCode($customer_code)
+    {
+        if (is_null($customer_code)) {
+            throw new \InvalidArgumentException('non-nullable customer_code cannot be null');
+        }
+        $this->container['customer_code'] = $customer_code;
 
         return $this;
     }

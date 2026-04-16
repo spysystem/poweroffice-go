@@ -202,6 +202,15 @@ class CustomerLedgerEntryTest extends TestCase
     }
 
     /**
+     * Test attribute "customer_code"
+     */
+    public function testPropertyCustomerCode()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "customer"
      */
     public function testPropertyCustomer()

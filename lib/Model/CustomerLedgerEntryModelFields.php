@@ -48,6 +48,7 @@ class CustomerLedgerEntryModelFields
     public string $strMatchId = 'matchId';
     public string $strLastChanged = 'lastChanged';
     public string $strCreatedDate = 'createdDate';
+    public string $strCustomerCode = 'customerCode';
     public string $strCustomer = 'customer';
     public string $strCustomMatchingReference = 'customMatchingReference';
     public string $strExternalImportReference = 'externalImportReference';

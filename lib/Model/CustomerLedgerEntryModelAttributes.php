@@ -48,6 +48,7 @@ class CustomerLedgerEntryModelAttributes
     public string $strMatchId = 'match_id';
     public string $strLastChanged = 'last_changed';
     public string $strCreatedDate = 'created_date';
+    public string $strCustomerCode = 'customer_code';
     public string $strCustomer = 'customer';
     public string $strCustomMatchingReference = 'custom_matching_reference';
     public string $strExternalImportReference = 'external_import_reference';

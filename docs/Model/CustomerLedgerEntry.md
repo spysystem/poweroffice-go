@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **match_id** | **int** |  | [optional]
 **last_changed** | **string** |  | [optional]
 **created_date** | **string** |  | [optional]
+**customer_code** | **int** |  | [optional]
 **customer** | [**\PowerOfficeGo\Model\Customer**](Customer.md) |  | [optional]
 **custom_matching_reference** | **string** |  | [optional]
 **external_import_reference** | **string** |  | [optional]
